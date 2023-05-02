@@ -1,0 +1,28 @@
+[
+    { 
+        "slug": "notes",
+        "label": "Notes de cours",
+        "title": "Notes de cours",
+        "description": "Des liens vers chaque page de notes de cours de ce site."
+    },
+    { 
+        "slug": "labs",
+        "label": "Laboratoires",
+        "title": "Laboratoires",
+        "description": "Des liens vers chaque page de laboratoires de ce site."
+    },
+    { 
+        "slug": "ress",
+        "label": "Ressources",
+        "title": "Ressources externes",
+        "description": "Des liens vers chaque ressource externe utilisée sur ce site.",
+        "noIndex": true
+    },
+    {
+        "slug": "random",
+        "label": "Random stuff",
+        "title": "Random stuff",
+        "description": "Un group de pages qui ne se retrouvent pas dans les sections.",
+        "noSection": true
+    }
+]

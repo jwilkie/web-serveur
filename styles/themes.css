@@ -1,0 +1,45 @@
+:root {
+    --text-color: #222;
+    --text-inverted-color: #fff;
+    --bg-color: #fff;
+    --bg-accent-color: #f78f20;
+    --bg-accent-gradient-color: #faa754;
+    --search-border-color: #a19d97;
+    --search-input-bg-color: #fdddbc;
+    --search-submit-bg-color: #6d6a62;
+    --search-submit-text-color: #fff;
+    --switch-bg-color: #fff;
+    --switch-slider-bg-color: #6d6a62;
+    --switch-slider-border-color: #a19d97;
+    --aside-bg-color: #fff;
+    --aside-border-color: #6d6a62;
+    --aside-button-bg-color: #6d6a62;
+    --aside-button-border-color: #a19d97;
+    --table-header-bg-color: #f78f20;
+    --table-header-text-color: #fff;
+    --bubble-bg-color: #f78f20;
+    --bubble-text-color: #fff;
+}
+
+[data-theme='dark'] {
+    --text-color: #fff;
+    --text-inverted-color: #fff;
+    --bg-color: #36352e;
+    --bg-accent-color: #eb5539;
+    --bg-accent-gradient-color: #f3734e;
+    --search-border-color: #a19d97;
+    --search-input-bg-color: #fdddbc;
+    --search-submit-bg-color: #6d6a62;
+    --search-submit-text-color: #fff;
+    --switch-bg-color: #fff;
+    --switch-slider-bg-color: #6d6a62;
+    --switch-slider-border-color: #a19d97;
+    --aside-bg-color: #36352e;
+    --aside-border-color: #f9ae90;
+    --aside-button-bg-color: #f9ae90;
+    --aside-button-border-color: #f3734e;
+    --table-header-bg-color: #eb5539;
+    --table-header-text-color: #fff;
+    --bubble-bg-color: #eb5539;
+    --bubble-text-color: #fff;
+}

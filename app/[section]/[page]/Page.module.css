@@ -1,0 +1,79 @@
+.page a {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.page a[href^="http://"]:after, .page a[href^="https://"]:after{
+    font-family: 'Material Icons';
+    font-weight: normal;
+    content: '\a0launch';
+    vertical-align: top;
+}
+
+.page p, .page ul, .page ol, .page table {
+    margin: 0 0 1rem;
+}
+
+.page ul {
+    margin-left: 22px;
+    padding: 0;
+}
+
+.page ol {
+    margin-left: 18px;
+    padding: 0;
+}
+
+.page li > ul {
+    padding: 0 0 0 calc(1em + 22px);
+    margin: 0;
+}
+
+.page li > ol {
+    padding: 0 0 0 calc(1em + 18px);
+    margin: 0;
+}
+
+.page li {
+    padding: .25em;
+}
+
+.page ul > li {
+    padding-left: .5em;
+}
+
+.page ol > li {
+    padding-left: 1em;
+}
+
+.page dt {
+    display: inline;
+    font-weight: 600;
+}
+
+.page dd {
+    margin-bottom: 1em;
+}
+
+.page pre {
+    margin: 0;
+}
+
+.page table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.page td, .page th {
+    padding: .5em;
+    text-align: left;
+    vertical-align: top;
+}
+
+.page th {
+    background-color: var(--table-header-bg-color);
+    color: var(--table-header-text-color);
+}
+
+.page section {
+    margin: 0 0 4em;
+}

@@ -1,6 +1,18 @@
-/** @type {import('next').NextConfig} */
+/** 
+ * @type {import('next').NextConfig} 
+ */
 const nextConfig = {
-  reactStrictMode: true,
+    reactStrictMode: true,
+    experimental: {
+        appDir: true
+    },
+    env: {
+        appTitle: 'Programmation Web Serveur',
+        sectionName: 'Module'
+    },
+    images: {
+        unoptimized: true
+    }
 }
 
-module.exports = nextConfig
+export default nextConfig;
