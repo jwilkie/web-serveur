@@ -7,6 +7,7 @@ const nextConfig = {
         appDir: true,
     },
     output: 'export',
+    basePath: '/website-template',
     images: {
         unoptimized: true
     }
