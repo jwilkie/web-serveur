@@ -1,14 +1,15 @@
-import { Comfortaa, Montserrat, Open_Sans } from '@next/font/google'
-import Providers from './(layout)/Providers'
-import Fonts from './(layout)/Fonts';
-import Header from './(layout)/Header';
-import Footer from './(layout)/Footer';
-import { getGroups } from '../ssr/contentLoader'
+import { Comfortaa, Montserrat, Open_Sans } from 'next/font/google'
+import Providers from './Providers'
+import Header from '@/components/Header';
+import Footer from '@/components//Footer';
+import ClientLayout from '@/components/ClientLayout';
+import { getGroups } from '@/model/group'
+import { getSections } from '@/model/section'
 
 import 'normalize.css/normalize.css'
-import '../styles/globals.css'
-import '../styles/themes.css'
-import styles from './(layout)/Layout.module.css'
+import '@/styles/globals.css'
+import '@/styles/themes.css'
+import styles from './layout.module.css'
 
 const comfortaa = Comfortaa({
     subsets: ['latin'],
@@ -31,15 +32,17 @@ const opensans = Open_Sans({
     variable: '--font-open-sans'
 });
 
-export default function RootLayout({ children }) {
-    let groups = getGroups();
-    
+export default async function RootLayout({ children }) {
+    let sections = await getSections();
+    let groups = await getGroups();
+
     return <html lang="fr" className={`${comfortaa.variable} ${montserrat.variable} ${opensans.variable}`}>
         <body className={styles.layout}>
             <Providers>
-                <Fonts />
                 <Header groups={groups} />
-                {children}
+                <ClientLayout sections={sections} groups={groups}>
+                    {children}
+                </ClientLayout>
                 <Footer />
             </Providers>
         </body>

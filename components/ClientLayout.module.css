@@ -1,0 +1,60 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    max-height: 999999rem;
+    position: relative;
+    padding: 6.55rem var(--main-padding) var(--main-padding) var(--main-padding);
+    background-color: var(--bg-color);
+}
+
+.main section {
+    margin-bottom: 4rem;
+}
+
+.main li {
+    margin: .5rem;
+}
+
+.main table {
+    border-collapse: collapse;
+}
+
+.main thead {
+    background-color: var(--table-head-bg-color);
+}
+
+.main td, .main th {
+    padding: .5rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+.main.aside {
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: 
+        visibility 0s linear .4s,
+        max-height 0s linear .4s;
+}
+
+@media (min-width: 640px){
+    .main {
+        max-height: none;
+    }
+
+    .main.aside {
+        visibility: visible;
+        max-height: none;
+        overflow: auto;
+        transition: none;
+    }
+}
+
+@media (min-width: 960px){
+    .main {
+        grid-area: 2 / 2 / 3 / 3;
+        padding: var(--main-padding);
+        max-width: 60rem;
+    }
+}

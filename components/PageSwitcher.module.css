@@ -1,0 +1,33 @@
+.switcher {
+    display: flex;
+    justify-content: space-between;
+    color: var(--page-switcher-text-color);
+    margin: 4rem 0 2rem;
+}
+
+.switcher a {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: .9rem;
+}
+
+.switcher.first {
+    justify-content: flex-end;
+}
+
+.switcher.last {
+    justify-content: flex-start;
+}
+
+@media(min-width: 22rem) {
+    .switcher a {
+        display: block;
+    }
+}
+
+@media(min-width: 25rem) {
+    .switcher a {
+        font-size: 1rem;
+    }
+}

@@ -1,11 +1,9 @@
-import { montserrat } from '../styles/fonts';
-import styles from '../styles/Bubble.module.css';
+import formatUnsignedInt from '@/utils/formatUnsignedInt';
+
+import styles from './Bubble.module.css';
 
 export default function Bubble({ name, number }) {
-    const formatUnsignedInt = (number, size) => 
-        ('0'.repeat(size - 1) + (number)).slice(-size);
-
-    return  <div className={styles.bubble + ' ' + montserrat.className}>
+    return  <div className={styles.bubble}>
         <span className={styles.name}>{name}</span>
         <span className={styles.number}>{formatUnsignedInt(number, 2)}</span>
     </div>

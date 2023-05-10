@@ -4,15 +4,12 @@
 const nextConfig = {
     reactStrictMode: true,
     experimental: {
-        appDir: true
+        appDir: true,
     },
-    env: {
-        appTitle: 'Programmation Web Serveur',
-        sectionName: 'Module'
-    },
+    output: 'export',
     images: {
         unoptimized: true
     }
 }
 
-export default nextConfig;
+module.exports = nextConfig

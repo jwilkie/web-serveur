@@ -1,4 +1,4 @@
-import styles from '../styles/Switch.module.css'
+import styles from './Switch.module.css'
 
 export default function Switch({checked, onChange}) {
     const handleChange = (event) => {

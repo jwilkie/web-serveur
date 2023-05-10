@@ -1,13 +1,22 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
-import AsideLayout from '../../(layout)/AsideLayout';
-import { getContents, getGroups } from '../../../ssr/contentLoader'
+import appConfig from '@/app.config'
+import { getGroupBySlug, getGroups } from '@/model/group'
+import { getSections } from '@/model/section'
+import capitalize from '@/utils/capitalize';
 
-import styles from './Group.module.css'
+import styles from './page.module.css'
 
-export function generateMetadata({params}) {
-    let groups = getGroups();
-    let group = groups[params.group]
+export async function generateStaticParams() {
+    let groups = await getGroups();
+
+    return Object.values(groups)
+        .filter((group) => !group.noIndex)
+        .map((group) => ({ group: group.slug }));
+}
+
+export async function generateMetadata({params}) {
+    let group = await getGroupBySlug(params.group);
 
     return {
         title: group.title,
@@ -16,40 +25,32 @@ export function generateMetadata({params}) {
 }
 
 export default async function Group({ params }) {
-    let data = await getContents();
-    let group = data.groups[params.group]
+    let group = await getGroupBySlug(params.group);
+    let sections = await getSections();
 
-    return <AsideLayout data={data}>
+    return <>
         <h1>{group.title}</h1>
         {group.noSection ?
             <ul className={styles.list}>
-                {Object.values(data.pages).filter((page) => page.group === group.slug).map((page) =>
+                {group.pages.map((page) =>
                     <li key={page.slug}>
                         <Link href={`/group/${group.slug}/${page.slug}`}>{page.title}</Link>
                     </li>
                 )}
             </ul>
-            :
-            data.sections.filter((section) => section.groups[group.slug] && !section.disabled).map((section, index) =>
+        :
+            sections.filter((section) => section.groups[group.slug] && !section.disabled).map((section, index) =>
                 <Fragment key={section.slug}>
-                    <h2>{process.env.sectionName} {index + 1} - {section.title}</h2>
+                    <h2>{capitalize(appConfig.sectionName)} {index + 1} - {section.title}</h2>
                     <ul className={styles.list}>
                         {section.groups[group.slug].map((page) => (
-                            <li key={page}>
-                                <Link href={`/${section.slug}/${page}`}>{data.pages[page].title}</Link>
+                            <li key={page.slug}>
+                                <Link href={`/${section.slug}/${page.slug}`}>{page.title}</Link>
                             </li>
                         ))}
                     </ul>
                 </Fragment>
             )
         }
-    </AsideLayout>
-}
-
-export async function generateStaticParams() {
-    let groups = getGroups();
-
-    return Object.entries(groups).map(([slug]) => {
-        return { group: slug };
-    });
+    </>
 }

@@ -1,39 +1,64 @@
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import appConfig from "@/app.config";
 
-/**
- * 
- * @param {Array<Section>} sections 
- */
-export default function useCurrentPage(sections) {
-    let pageSlug = useState(null);
-    let sectionSlug = useState(null);
-    let { pathname } = useRouter();
+export default function useCurrentPage(sections, groups) {
+    const pathname = usePathname();
 
-    /**
-     * 
-     * @param {string} pathname 
-     * @returns 
-     */
-    const getCurrentSection = (pathname) => {
-        let slashPosition = pathname.indexOf('/', 1);
-        let sectionSlug = pathname.substring(1, slashPosition !== -1 ? slashPosition : undefined);
-        let section = sections.find((section) => section.slug === sectionSlug);
-        return (section ? sectionSlug : null);
+    const getCurrentSection = () => {
+        if(pathname.startsWith(`/${appConfig.sectionName}-`)) {
+            let sectionSlug = pathname.split('/')[1];
+            return sections.find((section) => section.slug === sectionSlug);
+        }
+        else {
+            return null;
+        }
     }
 
-    /**
-     * 
-     * @param {string} pathname 
-     * @returns 
-     */
-    const getCurrentPage = (pathname) => {
-        let slashPosition = pathname.indexOf('/', 1);
-        let pageSlug = pathname.substring(slashPosition + 1) || null;
-        return pageSlug;
+    const getCurrentGroup = () => {
+        if(pathname.startsWith('/group/')) {
+            let groupSlug = pathname.split('/')[2];
+            return groups[groupSlug];
+        }
+        else {
+            return null;
+        }
     }
+
+    const getCurrentPage = (section, group) => {
+        if(section && pathname.startsWith(`/${section.slug}/`)) {
+            // We are in a section's page
+            let pageSlug = pathname.substring(pathname.lastIndexOf('/') + 1);
+            return section.pages.find((page) => page.slug === pageSlug);
+        }
+        else if (group && pathname.startsWith(`/group/${group.slug}/`)) {
+            // We are in a group's page
+            let pageSlug = pathname.substring(pathname.lastIndexOf('/') + 1);
+            return group.pages.find((page) => page.slug === pageSlug);
+        }
+        else {
+            // We are not in a page
+            return null;
+        }
+    }
+
+    const defaultSection = getCurrentSection();
+    const defaultGroup = getCurrentGroup();
+    const defaultPage = getCurrentPage(defaultSection, defaultGroup)
+
+    const [currentSection, setCurrentSection] = useState(defaultSection);
+    const [currentGroup, setCurrentGroup] = useState(defaultGroup);
+    const [currentPage, setCurrentPage] = useState(defaultPage);
 
     useEffect(() => {
+        const section = getCurrentSection();
+        const group = getCurrentGroup();
+        const page = getCurrentPage(defaultSection, defaultGroup)
 
-    }, [pathname]);
+        setCurrentSection(section);
+        setCurrentGroup(group);
+        setCurrentPage(page);
+    }, [pathname])
+
+    return { currentSection, currentGroup, currentPage }
 }
