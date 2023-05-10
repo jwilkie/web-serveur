@@ -70,11 +70,11 @@ export function WebExample({ title, children }) {
      * height.
      * @param {string} param0 Message data sent by the iFrame.
      */
-    const onIFrameLoad = ({data}) => {
+    const onIFrameLoad = useCallback(({data}) => {
         if(data === id) {
             setIFrameHeight(iFrameRef.current);
         }
-    }
+    }, [id]);
 
     /**
      * Resize an iFrame to its content height.
@@ -111,7 +111,7 @@ export function WebExample({ title, children }) {
             iFrameRef.current = null;
             window.removeEventListener('message', onIFrameLoad)
         }
-    }, []);
+    }, [onIFrameLoad]);
 
     return <div className={styles.container}>
         {children}
