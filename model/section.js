@@ -22,7 +22,7 @@ async function getSectionPages(section) {
     // Get all pages' metadata
     let promises = pageSlugs.map(
         (pageSlug, index) => import(`../app/(section)/${section.slug}/${pageSlug}/page.jsx`)
-            .then(({ metadata }) => ({ slug: pageSlug, index, ...metadata }))
+            .then(({ metadata }) => ({ slug: pageSlug, index, section: section.slug, ...metadata }))
     );
 
     // Remove pages with no metadata

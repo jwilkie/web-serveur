@@ -10,7 +10,9 @@ import styles from './page.module.css'
 export async function generateStaticParams() {
     let sections = await getSections();
     
-    return sections.map((section) => ({ section: section.slug }));
+    return sections
+        .filter((section) => !section.disabled)
+        .map((section) => ({ section: section.slug }));
 }
 
 /**

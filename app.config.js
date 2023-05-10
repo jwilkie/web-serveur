@@ -5,6 +5,7 @@ import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
 import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 
 const appConfig = {
+    domain: 'https://jwilkie.github.io/website-template',
     title: 'Programmation Web Serveur',
     sectionName: 'module',
     code: {
