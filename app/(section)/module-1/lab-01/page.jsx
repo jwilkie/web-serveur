@@ -127,19 +127,19 @@ export default function Page() {
         <section>
             <h2>Download Block</h2>
             <DownloadBlock>
-                <File fileName="test.txt" path="/test.txt"></File>
-                <File fileName="archive.zip" path="/archive.zip"></File>
-                <File fileName="UnNomDeFichierTresLong_avecDes_Soulignement.json" path="/test.json"></File>
+                <File fileName="test.txt" path="/lab-01/test.txt"></File>
+                <File fileName="archive.zip" path="/lab-01/archive.zip"></File>
+                <File fileName="UnNomDeFichierTresLong_avecDes_Soulignement.json" path="/lab-01/test.json"></File>
                 <File path="/img/e-cite.png"></File>
-                <File path="/Video.avi"></File>
-                <File path="/Audio.mp3"></File>
-                <File path="/Adobe.pdf"></File>
+                <File path="/lab-01/Video.avi"></File>
+                <File path="/lab-01/Audio.mp3"></File>
+                <File path="/lab-01/Adobe.pdf"></File>
             </DownloadBlock>
         </section>
 
         <section>
             <h2>Vidéo</h2>
-            <YoutubeVideo src="https://www.youtube.com/embed/sdUUx5FdySs" title="Kiwi!" />
+            <YoutubeVideo code="sdUUx5FdySs" title="Kiwi!" />
         </section>
 
         <section>

@@ -1,13 +1,13 @@
 import styles from './YoutubeVideo.module.css'
 
-export default function YoutubeVideo({title, src}) {
+export default function YoutubeVideo({title, code}) {
     return <div className={ styles.video }>
         <div>
             <iframe 
                 title={ title }
-                src={ src }
+                src={ `https://www.youtube-nocookie.com/embed/${code}` }
                 frameBorder="0" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowFullScreen>
             </iframe>
         </div>

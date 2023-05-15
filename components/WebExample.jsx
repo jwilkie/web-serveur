@@ -81,7 +81,7 @@ export function WebExample({ title, children }) {
      * @param {HTMLIFrameElement} iframe The iFrame we want to resize to its content height.
      */
     const setIFrameHeight = (iframe) => {
-        const iFrameHeight = iframe.contentWindow.document.body.scrollHeight;
+        const iFrameHeight = iframe.contentWindow.document.body.scrollHeight + 1;
         const iFrameBorderHeight = iframe.offsetHeight - iframe.clientHeight;
         setHeight(iFrameHeight + iFrameBorderHeight);
     } 

@@ -1,10 +1,11 @@
 import { Comfortaa, Montserrat, Open_Sans } from 'next/font/google'
 import Providers from './Providers'
-import Header from '@/components/Header';
-import Footer from '@/components//Footer';
-import ClientLayout from '@/components/ClientLayout';
+import Header from '@/components/Header'
+import Footer from '@/components//Footer'
+import ClientLayout from '@/components/ClientLayout'
 import { getGroups } from '@/model/group'
 import { getSections } from '@/model/section'
+import { basePath } from '@/next.config'
 
 import 'normalize.css/normalize.css'
 import '@/styles/globals.css'
@@ -31,6 +32,17 @@ const opensans = Open_Sans({
     display: 'swap',
     variable: '--font-open-sans'
 });
+
+/**
+ * @returns {import('next').Metadata}
+ */
+export function generateMetadata() {
+    return {
+        icons: {
+            icon: (basePath || '') + '/favicon.ico'
+        }
+    }
+}
 
 export default async function RootLayout({ children }) {
     let sections = await getSections();

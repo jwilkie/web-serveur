@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import appConfig from "@/app.config";
+import { useEffect, useState } from 'react';
+import usePathnameWithoutBasepath from './usePathnameWithoutBasepath';
+import appConfig from '@/app.config';
 
 export default function useCurrentPage(sections, groups) {
-    const pathname = usePathname();
+    const pathname = usePathnameWithoutBasepath();
 
     const getCurrentSection = () => {
-        if(pathname.startsWith(`/${appConfig.sectionName}-`)) {
+        if (pathname.startsWith(`/${appConfig.sectionName}-`)) {
             let sectionSlug = pathname.split('/')[1];
             return sections.find((section) => section.slug === sectionSlug);
         }
@@ -16,7 +16,7 @@ export default function useCurrentPage(sections, groups) {
     }
 
     const getCurrentGroup = () => {
-        if(pathname.startsWith('/group/')) {
+        if (pathname.startsWith(`/group/`)) {
             let groupSlug = pathname.split('/')[2];
             return groups[groupSlug];
         }
@@ -26,7 +26,7 @@ export default function useCurrentPage(sections, groups) {
     }
 
     const getCurrentPage = (section, group) => {
-        if(section && pathname.startsWith(`/${section.slug}/`)) {
+        if (section && pathname.startsWith(`/${section.slug}/`)) {
             // We are in a section's page
             let pageSlug = pathname.substring(pathname.lastIndexOf('/') + 1);
             return section.pages.find((page) => page.slug === pageSlug);
@@ -53,7 +53,7 @@ export default function useCurrentPage(sections, groups) {
     useEffect(() => {
         const section = getCurrentSection();
         const group = getCurrentGroup();
-        const page = getCurrentPage(defaultSection, defaultGroup)
+        const page = getCurrentPage(section, group)
 
         setCurrentSection(section);
         setCurrentGroup(group);

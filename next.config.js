@@ -3,11 +3,8 @@
  */
 const nextConfig = {
     reactStrictMode: true,
-    experimental: {
-        appDir: true,
-    },
+    // basePath: '/website-template',
     output: 'export',
-    basePath: '/website-template',
     images: {
         unoptimized: true
     }
