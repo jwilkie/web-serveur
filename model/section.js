@@ -21,7 +21,7 @@ async function getSectionPages(section) {
 
     // Get all pages' metadata
     let promises = pageSlugs.map(
-        (pageSlug, index) => import(`../app/(section)/${section.slug}/${pageSlug}/page.jsx`)
+        (pageSlug, index) => import(`@/app/(section)/${section.slug}/${pageSlug}/page.jsx`)
             .then(({ metadata }) => ({ slug: pageSlug, index, section: section.slug, ...metadata }))
     );
 
@@ -48,7 +48,8 @@ async function getSectionGroups(section) {
 async function getSectionSlugs() {
     let sectionSlugs = (await readdir(join(process.cwd(), 'app', '(section)'), { withFileTypes: true }))
         .filter((entry) => entry.isDirectory() && entry.name !== '[section]')
-        .map((entry) => entry.name);
+        .map((entry) => entry.name)
+        .sort((name1, name2) => parseInt(name1.split('-').at(-1)) - parseInt(name2.split('-').at(-1)));
 
     return sectionSlugs;
 }
