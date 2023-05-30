@@ -55,19 +55,25 @@ async function getSectionSlugs() {
 }
 
 export async function getSectionBySlug(sectionSlug) {
-    let fileText = await readFile(join(process.cwd(), 'app', '(section)', sectionSlug, 'section.json'));
-    let section = JSON.parse(fileText);
-    section.slug = sectionSlug;
-    section.pages = await getSectionPages(section)
-    section.groups = await getSectionGroups(section)
+    let fileText = await readFile(join(process.cwd(), 'app', '(section)', sectionSlug, 'section.json')).then((text) => text, () => null);
+    if(fileText) {
+        let section = JSON.parse(fileText);
+        section.slug = sectionSlug;
+        section.pages = await getSectionPages(section)
+        section.groups = await getSectionGroups(section)
 
-    return section;
+        return section;
+    }
+    else {
+        // console.error('Invalid section error: ')
+        throw new Error(`The directory of the section /app/(section)/${sectionSlug}/ does not contain a section.json file. See more info here DOC_URL_HERE`);
+    }
 }
 
 export async function getSections() {
     let sectionSlugs = await getSectionSlugs();
     let promises = sectionSlugs.map((slug) => getSectionBySlug(slug));
-    let sections = await Promise.all(promises);
+    let sections = (await Promise.all(promises)).filter((section) => section);
 
     return sections;
 }
