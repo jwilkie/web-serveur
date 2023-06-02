@@ -5,7 +5,6 @@ export const metadata = {
     title: 'No Section 2',
     description: 'Une page qui ne se retrouve pas dans une section',
     keywords: ["non section", "apprentissage"],
-    group: "nosection"
 }
 
 export default function NoSection() {

@@ -10,7 +10,7 @@ async function getGroupPages(group) {
     // Get all pages' metadata
     let promises = pageSlugs.map(
         (pageSlug, index) => import(`../app/group/${group.slug}/${pageSlug}/page.jsx`)
-            .then(({ metadata }) => ({ slug: pageSlug, index, ...metadata }))
+            .then(({ metadata }) => ({ slug: pageSlug, index, ...metadata, group: group.slug }))
     );
 
     // Remove pages with no metadata
