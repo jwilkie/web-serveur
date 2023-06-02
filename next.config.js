@@ -5,6 +5,7 @@ const nextConfig = {
     reactStrictMode: true,
     // basePath: '/website-template',
     output: 'export',
+    trailingSlash: true,
     images: {
         unoptimized: true
     }

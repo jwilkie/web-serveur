@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import usePathnameWithoutBasepath from './usePathnameWithoutBasepath';
+import useCleanPathname from './useCleanPathname';
 import appConfig from '@/app.config';
 
 export default function useCurrentPage(sections, groups) {
-    const pathname = usePathnameWithoutBasepath();
+    const pathname = useCleanPathname();
 
     const getCurrentSection = () => {
         if (pathname.startsWith(`/${appConfig.sectionName}-`)) {

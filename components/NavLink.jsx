@@ -1,10 +1,10 @@
 'use client'
 
 import Link from 'next/link';
-import usePathnameWithoutBasepath from '@/hooks/usePathnameWithoutBasepath';
+import useCleanPathname from '@/hooks/useCleanPathname';
 
 export default function NavLink({ href, className, activeClassName, children, ...props }) {
-    const pathname = usePathnameWithoutBasepath();
+    const pathname = useCleanPathname();
 
     const getComputedClassName = () => {
         return pathname === href ? `${className || ''} ${activeClassName}`.trim() : className;
