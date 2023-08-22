@@ -5,12 +5,14 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    margin: 0 -2rem;
+    margin: -2rem 0 2rem;
     padding: 0 2rem 2px;
+    max-width: 60rem;
     position: -webkit-sticky;
     position: sticky;
     bottom: var(--main-padding);
     overflow: hidden;
+    z-index: 2;
 }
 
 .button {
@@ -23,7 +25,6 @@
     border: none;
     border-radius: 50%;
     transition: transform 0.5s;
-    z-index: 2;
     box-shadow: 0 2px 0 #00000055;
     cursor: pointer;
 }
@@ -38,4 +39,20 @@
 
 .hidden {
     transform: translateX(7rem);
+}
+
+.aside {
+    transform: translateX(7rem);
+}
+
+@media (min-width: 640px){
+    .aside {
+        transform: none;
+    }
+}
+
+@media (min-width: 960px){
+    .container {
+        grid-area: 3 / 2;
+    }
 }

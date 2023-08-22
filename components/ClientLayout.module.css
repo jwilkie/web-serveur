@@ -1,6 +1,7 @@
 .main {
     display: flex;
     flex-direction: column;
+    max-width: 60rem;
     max-height: 999999rem;
     position: relative;
     padding: 6.55rem var(--main-padding) var(--main-padding) var(--main-padding);
@@ -55,6 +56,5 @@
     .main {
         grid-area: 2 / 2 / 3 / 3;
         padding: var(--main-padding);
-        max-width: 60rem;
     }
 }

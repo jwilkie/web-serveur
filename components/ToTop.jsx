@@ -2,7 +2,7 @@ import usePageOverflow from '@/hooks/usePageOverflow';
 
 import styles from './ToTop.module.css'
 
-export default function ToTop() {
+export default function ToTop({isAsideOpen}) {
     /**
      * Variable indicating whether the the page is overflowing or not.
      */
@@ -17,7 +17,11 @@ export default function ToTop() {
 
     return <div className={styles.container}>
         <button 
-            className={styles.button + (!isPageOverflowing ? ' ' + styles.hidden : '')} 
+            className={
+                styles.button + 
+                (!isPageOverflowing ? ' ' + styles.hidden : '') + 
+                (isAsideOpen ? ' ' + styles.aside : '')
+            } 
             title="Défiler vers le haut" 
             onClick={scrollToTop}>
             <i className={ styles.arrow }></i>

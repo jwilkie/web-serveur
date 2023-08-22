@@ -83,7 +83,7 @@
 
 @media (min-width: 960px){
     .aside {
-        grid-column: 1 / 2;
+        grid-area: 2 / 1 / 4 / 2;
         position: static;
         transform: none;
         overflow: visible;

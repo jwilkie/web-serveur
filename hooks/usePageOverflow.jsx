@@ -19,6 +19,7 @@ export default function usePageOverflow(ratio = 1) {
     // Check if there is an overflow after the first render, after each 
     // resize of the window or after changing pages.
     // TODO: FIX searchParams for search page
+    // TODO: FIX page overflow wrong value when changing CSS overflow when opening aside
     const { windowResizing } = useWindowSize();
     const pathname = usePathname();
     // const searchParams = useSearchParams();

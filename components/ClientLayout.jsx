@@ -28,7 +28,8 @@ export default function ClientLayout({sections, groups, children}) {
                 {children}
                 <PageSwitcher sections={sections} groups={groups} />
             </div>
-            <ToTop />
         </main>
+
+        <ToTop isAsideOpen={isAsideOpen} />
     </>
 }
