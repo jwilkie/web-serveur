@@ -8,6 +8,11 @@ import appConfig from '@/app.config';
 import styles from './CodeBlock.module.css';
 import { useEffect, useState } from 'react';
 
+// Load each languages highlignting from the app configuration
+for (const [key, value] of Object.entries(appConfig.code.languages)) {
+    SyntaxHighlighter.registerLanguage(key, value.renderer);
+}
+
 // TODO: Create my own syntax highlighter because react-syntax-highlighter is buggy
 // I need to wait for the components to be mounted to set the styles, which is stupid
 export default function CodeBlock({ language, children }) {
@@ -19,7 +24,7 @@ export default function CodeBlock({ language, children }) {
     }, []);
 
     return <div className={styles.container}>
-        <div className={styles.tag}>{appConfig.code.languages[language] || language}</div>
+        <div className={styles.tag}>{appConfig.code.languages[language]?.tag || language}</div>
         <AnimateHeight height={height} duration={300} animateOpacity={true}>
             {height && <SyntaxHighlighter
                 language={language}

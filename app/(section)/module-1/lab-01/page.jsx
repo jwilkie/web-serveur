@@ -97,6 +97,9 @@ export default function Page() {
             <CodeBlock language="Texte">
                 {'Texte sans highlight'}
             </CodeBlock>
+            <CodeBlock language="csharp">
+                {'const int TEST = 2;'}
+            </CodeBlock>
         </section>
 
         <section>
