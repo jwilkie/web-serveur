@@ -94,6 +94,9 @@ export default function Page() {
             <CodeBlock language="js">
                 {js}
             </CodeBlock>
+            <CodeBlock language="Texte">
+                {'Texte sans highlight'}
+            </CodeBlock>
         </section>
 
         <section>
