@@ -38,6 +38,9 @@
     --download-block-border-color: #6d6a62;
     --download-block-hover-color: #faa754;
     --download-block-text-color: #222;
+    --file-explorer-border-color: #6d6a62;
+    --file-explorer-text-color: #222;
+    --file-explorer-folder-color: #a19d97;
 }
 
 [data-theme='dark'] {
@@ -80,4 +83,7 @@
     --download-block-border-color: #6d6a62;
     --download-block-hover-color: #eb5539;
     --download-block-text-color: #fff;
+    --file-explorer-border-color: #6d6a62;
+    --file-explorer-text-color: #fff;
+    --file-explorer-folder-color: #a19d97;
 }

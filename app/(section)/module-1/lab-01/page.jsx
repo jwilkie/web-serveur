@@ -1,11 +1,12 @@
 import BorderedBox from "@/components/BorderedBox";
 import CodeBlock from "@/components/CodeBlock";
 import ColoredBox from "@/components/ColoredBox";
-import { DownloadBlock, File } from "@/components/DownloadBlock";
+import { DownloadBlock, File as DownloadFile } from "@/components/DownloadBlock";
 import IC from "@/components/InlineCode";
 import OverflowContainer from "@/components/OverflowContainer";
 import { Code, WebExample } from "@/components/WebExample";
 import YoutubeVideo from "@/components/YoutubeVideo";
+import { FileExplorer, Folder, File } from "@/components/FileExplorer";
 
 /**
  * @type {import("next").Metadata}
@@ -17,8 +18,8 @@ export const metadata = {
     group: "labs"
 }
 
-const js = 
-`let chaine = 'Une chaine';
+const js =
+    `let chaine = 'Une chaine';
 let tab = [];
 
 let i = 0;
@@ -29,13 +30,13 @@ for(const char in chaine) {
 
 console.log(\`Taille du tableau: \${i}\`)`;
 
-const css = 
-`html {
+const css =
+    `html {
     box-sizing: border-box;
 }`;
 
-const html = 
-`<html>
+const html =
+    `<html>
     <head>
         <title>Test</title>
     </head>
@@ -45,15 +46,15 @@ const html =
 </html>`
 
 const exempleHTML1 =
-`<input type="button" value="Changer de couleur" id="couleur">`;
+    `<input type="button" value="Changer de couleur" id="couleur">`;
 
 const exempleHTML2 =
-`<div class="container">
+    `<div class="container">
     <div class="box"></div>
 </div>`;
 
 const exempleCSS =
-`.container {
+    `.container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,7 +73,7 @@ const exempleCSS =
 }`;
 
 const exempleJS =
-`let bouton = document.getElementById('couleur');
+    `let bouton = document.getElementById('couleur');
 let box = document.querySelector('.box');
 bouton.addEventListener('click', () => {
     box.style.backgroundColor = '#00a';
@@ -133,13 +134,13 @@ export default function Page() {
         <section>
             <h2>Download Block</h2>
             <DownloadBlock>
-                <File fileName="test.txt" path="/lab-01/test.txt"></File>
-                <File fileName="archive.zip" path="/lab-01/archive.zip"></File>
-                <File fileName="UnNomDeFichierTresLong_avecDes_Soulignement.json" path="/lab-01/test.json"></File>
-                <File path="/img/e-cite.png"></File>
-                <File path="/lab-01/Video.avi"></File>
-                <File path="/lab-01/Audio.mp3"></File>
-                <File path="/lab-01/Adobe.pdf"></File>
+                <DownloadFile fileName="test.txt" path="/lab-01/test.txt"></DownloadFile>
+                <DownloadFile fileName="archive.zip" path="/lab-01/archive.zip"></DownloadFile>
+                <DownloadFile fileName="UnNomDeFichierTresLong_avecDes_Soulignement.json" path="/lab-01/test.json"></DownloadFile>
+                <DownloadFile path="/img/e-cite.png"></DownloadFile>
+                <DownloadFile path="/lab-01/Video.avi"></DownloadFile>
+                <DownloadFile path="/lab-01/Audio.mp3"></DownloadFile>
+                <DownloadFile path="/lab-01/Adobe.pdf"></DownloadFile>
             </DownloadBlock>
         </section>
 
@@ -213,6 +214,47 @@ export default function Page() {
                     </tbody>
                 </table>
             </OverflowContainer>
+        </section>
+
+        <section>
+            <h2>File Explorer</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga vel placeat exercitationem, quam nesciunt officiis culpa eaque ut quo esse nobis blanditiis eligendi fugit modi, porro vero enim temporibus distinctio?</p>
+            <FileExplorer>
+                <Folder name="css">
+                    <File name="normalize.css"></File>
+                    <File name="style.css"></File>
+                </Folder>
+                <Folder name="js">
+                    <File name="main.js"></File>
+                </Folder>
+                <Folder name="ressources">
+                    <Folder name="images">
+                        <File name="image.jpg"></File>
+                        <File name="image2.png"></File>
+                    </Folder>
+                    <File name="video.mp4"></File>
+                    <File name="audio.wav"></File>
+                    <File name="document.pdf"></File>
+                    <File name="projet.zip"></File>
+                </Folder>
+                <Folder name="Ceci">
+                    <Folder name="Est">
+                        <Folder name="Un">
+                            <Folder name="Test pour voir">
+                                <Folder name="Comment la longueur">
+                                    <Folder name="Réagit">
+                                        <Folder name="Avec un nom de dossier très long">
+
+                                        </Folder>
+                                    </Folder>
+                                </Folder>
+                            </Folder>
+                        </Folder>
+                    </Folder>
+                </Folder>
+                <File name="index.html"></File>
+            </FileExplorer>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga vel placeat exercitationem, quam nesciunt officiis culpa eaque ut quo esse nobis blanditiis eligendi fugit modi, porro vero enim temporibus distinctio?</p>
         </section>
     </>;
 }
