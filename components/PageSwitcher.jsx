@@ -32,12 +32,12 @@ export default function PageSwitcher({sections, groups}) {
 
     return currentPage && <div className={styles.switcher + ' ' + (isFirst() ? styles.first : (isLast() ? styles.last : ''))}>
         {!isFirst() &&
-            <Link href={getPath(-1)} className={styles.previous}>
+            <Link href={getPath(-1)} className={styles.link}>
                 <span>&lt;&lt;</span> <span>Page précédente</span>
             </Link>
         }
         {!isLast() &&
-            <Link href={getPath(1)} className={styles.next}>
+            <Link href={getPath(1)} className={styles.link}>
                 <span>Page suivante</span> <span>&gt;&gt;</span>
             </Link>
         }

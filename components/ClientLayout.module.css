@@ -39,6 +39,21 @@
         max-height 0s linear .4s;
 }
 
+.main a {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.main a[href^="https://"]:after {
+    content: ' ';
+    display: inline-block;
+    background-image: url("/img/external.svg");
+    background-size: .9rem .9rem;
+    width: .9rem;
+    height: .9rem;
+    margin: 0 0 0 5px;
+    vertical-align: -1px;
+}
+
 @media (min-width: 640px){
     .main {
         max-height: none;

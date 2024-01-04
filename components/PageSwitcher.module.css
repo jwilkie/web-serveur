@@ -5,11 +5,12 @@
     margin: 4rem 0 2rem;
 }
 
-.switcher a {
+.switcher .link {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     font-size: .9rem;
+    border: none;
 }
 
 .switcher.first {
@@ -21,13 +22,13 @@
 }
 
 @media(min-width: 22rem) {
-    .switcher a {
+    .switcher .link {
         display: block;
     }
 }
 
 @media(min-width: 25rem) {
-    .switcher a {
+    .switcher .link {
         font-size: 1rem;
     }
 }
