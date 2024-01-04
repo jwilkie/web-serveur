@@ -19,6 +19,10 @@
     margin-top: .5rem;
 }
 
+.list .description .link {
+    border: none;
+}
+
 .list .description h2 {
     border-bottom: 2px solid var(--text-color);
     padding-bottom: 1px;

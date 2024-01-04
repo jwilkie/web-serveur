@@ -23,7 +23,7 @@ export default async function Home() {
                 <Bubble name={capitalize(appConfig.sectionName)} number={index + 1} />
                 <div className={ styles.description }>
                     {!section.disabled ? 
-                        <Link href={`/${section.slug}/`}><h2>{section.title}</h2></Link>
+                        <Link href={`/${section.slug}/`} className={styles.link}><h2>{section.title}</h2></Link>
                         :
                         <h2>{section.title}</h2>
                     }
