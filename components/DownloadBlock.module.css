@@ -7,53 +7,54 @@
     padding: .5rem;
 }
 
-.file {
+.block .file {
     display: flex;
     align-items: center;
     gap: .5rem;
     padding: .5rem;
     border-radius: 10px;
     color: var(--download-block-text-color);
+    border: none;
 }
 
-.file:hover {
+.block .file:hover {
     background-color: var(--download-block-hover-color);
 }
 
-.file svg {
+.block .file svg {
     flex: 0 0 2rem;
     height: 2rem;
     fill: var(--download-block-text-color);
 }
 
-.file .info {
+.block .file .info {
     display: flex;
     flex-direction: column;
     min-width: 0;
     padding: .5rem;
 }
 
-.file .name {
+.block .file .name {
     display: flex;
     min-width: 0;
     font-size: 1.2rem;
 }
 
-.file .name span:first-child {
+.block .file .name span:first-child {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.file .name span:last-child {
+.block .file .name span:last-child {
     flex-shrink: 0;
 }
 
-.file:hover .name {
+.block .file:hover .name {
     text-decoration: underline;
 }
 
-.file .size {
+.block .file .size {
     font-size: .8rem;
 }
 
