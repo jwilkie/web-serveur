@@ -39,6 +39,17 @@ a, a:link, a:visited, a:focus, a:hover, a:active {
     color: inherit;
 }
 
+table {
+    width: 100%;
+}
+
+kbd {
+    background-color: var(--key-bg-color);
+    padding: 0 .2rem;
+    border-radius: 3px;
+    box-shadow: -1px 1px 0 1px var(--key-border-color);
+}
+
 sup {
     vertical-align: super;
     font-size: 0.6em;

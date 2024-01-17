@@ -84,14 +84,24 @@ export default function Page() {
         <section>
             <h2>Liens</h2>
             <p>
-                Lorem ipsum dolor, sit 
-                amet <a href="https://google.com" target="_blank" rel="noopener noreferrer">consectetur</a> adipisicing 
+                Lorem ipsum dolor, sit
+                amet <a href="https://google.com" target="_blank" rel="noopener noreferrer">consectetur</a> adipisicing
                 elit. A ut iusto obcaecati consequatur ab vitae veniam ipsum accusantium totam possimus voluptatum mollitia est quisquam eius id cum recusandae, blanditiis ullam!
             </p>
             <ul>
                 <li><a href="/module-1/test">test</a></li>
                 <li><a href="https://google.com">Google</a></li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Autre CSS Misc</h2>
+            <div>
+                Keyboard Keys: <kbd>Ctrl</kbd> + <kbd>C</kbd>
+            </div>
+            <div>
+                Exponent: 3<sup>5</sup>, 2<sup>ème</sup>
+            </div>
         </section>
 
         <section>
@@ -223,6 +233,26 @@ export default function Page() {
                             <td>Jonathan</td>
                             <td>2024-01-01</td>
                             <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum aliquam ea voluptate eius quo doloribus earum veniam doloremque quisquam dolorum enim quidem tempora, ex minima sit aspernatur quis ducimus harum.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </OverflowContainer>
+
+            <OverflowContainer>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th><th>Prenom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Wilkie</td>
+                            <td>Jonathan</td>
+                        </tr>
+                        <tr>
+                            <td>Audrey</td>
+                            <td>Jonathan</td>
                         </tr>
                     </tbody>
                 </table>

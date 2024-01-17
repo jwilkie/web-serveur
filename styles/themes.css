@@ -27,6 +27,8 @@
     --to-top-text-color: #fff;
     --page-switcher-text-color: #f78f20;
     --inline-code-bg-color: #d6d6d6;
+    --key-bg-color: #d6d6d6;
+    --key-border-color: #6d6a62;
     --code-block-border-color: #6d6a62;
     --code-block-tag-bg-color: #faa754;
     --code-block-tag-text-color: #222;
@@ -72,6 +74,8 @@
     --to-top-text-color: #fff;
     --page-switcher-text-color: #eb5539;
     --inline-code-bg-color: #f9ae90;
+    --key-bg-color: #f9ae90;
+    --key-border-color: #f3734e;
     --code-block-border-color: #6d6a62;
     --code-block-tag-bg-color: #eb5539;
     --code-block-tag-text-color: #fff;
