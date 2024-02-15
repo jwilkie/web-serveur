@@ -1,3 +1,4 @@
+import Image from "next/image";
 import BorderedBox from "@/components/BorderedBox";
 import CodeBlock from "@/components/CodeBlock";
 import ColoredBox from "@/components/ColoredBox";
@@ -7,6 +8,8 @@ import OverflowContainer from "@/components/OverflowContainer";
 import { Code, WebExample } from "@/components/WebExample";
 import YoutubeVideo from "@/components/YoutubeVideo";
 import { FileExplorer, Folder, File } from "@/components/FileExplorer";
+
+import testImage from "@/public/img/e-cite.png";
 
 /**
  * @type {import("next").Metadata}
@@ -298,6 +301,17 @@ export default function Page() {
                 <File name="index.html"></File>
             </FileExplorer>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga vel placeat exercitationem, quam nesciunt officiis culpa eaque ut quo esse nobis blanditiis eligendi fugit modi, porro vero enim temporibus distinctio?</p>
+        </section>
+
+        <section>
+            <h2>Images</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi harum suscipit atque nobis, a, earum repellendus, et veritatis neque maiores dolor corrupti ratione autem exercitationem? Reprehenderit unde in optio quia!
+            </p>
+            <Image src={testImage} alt="Test image" />
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus vel odit quis optio molestiae neque necessitatibus, fuga, suscipit deleniti ullam ipsa sunt explicabo sequi commodi facere molestias magni delectus. Eius?
+            </p>
         </section>
     </>;
 }

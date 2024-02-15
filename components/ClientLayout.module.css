@@ -54,6 +54,11 @@
     vertical-align: -1px;
 }
 
+.main img {
+    display: block;
+    margin: 1rem auto;
+}
+
 @media (min-width: 640px){
     .main {
         max-height: none;
