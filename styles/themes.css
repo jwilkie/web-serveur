@@ -43,6 +43,8 @@
     --file-explorer-border-color: #6d6a62;
     --file-explorer-text-color: #222;
     --file-explorer-folder-color: #a19d97;
+    --spoiler-button-color: #f78f20;
+    --spoiler-button-shown-color: #faa754;
 }
 
 [data-theme='dark'] {
@@ -90,4 +92,6 @@
     --file-explorer-border-color: #6d6a62;
     --file-explorer-text-color: #fff;
     --file-explorer-folder-color: #a19d97;
+    --spoiler-button-color: #eb5539;
+    --spoiler-button-shown-color: #f3734e;
 }
