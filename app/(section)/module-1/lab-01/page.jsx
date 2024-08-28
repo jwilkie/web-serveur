@@ -8,6 +8,7 @@ import OverflowContainer from "@/components/OverflowContainer";
 import { Code, WebExample } from "@/components/WebExample";
 import YoutubeVideo from "@/components/YoutubeVideo";
 import { FileExplorer, Folder, File } from "@/components/FileExplorer";
+import Spoiler from "@/components/Spoiler";
 
 import testImage from "@/public/img/e-cite.png";
 
@@ -312,6 +313,24 @@ export default function Page() {
             <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus vel odit quis optio molestiae neque necessitatibus, fuga, suscipit deleniti ullam ipsa sunt explicabo sequi commodi facere molestias magni delectus. Eius?
             </p>
+        </section>
+
+        <section>
+            <h2>Spoiler</h2>
+            <Spoiler>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem id debitis sapiente odit, voluptas minus velit similique, enim corrupti itaque ea rem dolores quis ex deserunt odio. Ipsam, est eveniet!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vero corrupti error dolores fuga cum cupiditate optio suscipit mollitia, iste cumque laboriosam impedit repellendus rerum. Quas optio praesentium doloribus corporis.
+                </p>
+            </Spoiler>
+
+            <Spoiler label="Spoiler" border={false}>
+                <CodeBlock language="html">
+                    {html}
+                </CodeBlock>
+            </Spoiler>
         </section>
     </>;
 }
