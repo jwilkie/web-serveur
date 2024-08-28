@@ -1,0 +1,68 @@
+html {
+    line-height: 1.5;
+    font-family: var(--font-open-sans);
+    font-size: 16px;
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0 0 .8em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 0 0 .4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, a:link, a:visited, a:focus, a:hover, a:active {
+    color: inherit;
+}
+
+table {
+    width: 100%;
+}
+
+kbd {
+    background-color: var(--key-bg-color);
+    padding: 0 .2rem;
+    border-radius: 3px;
+    box-shadow: -1px 1px 0 1px var(--key-border-color);
+}
+
+kbd img {
+    display: inline-block;
+    height: 0.8rem;
+    width: auto;
+    padding-top: 0.1rem;
+    vertical-align: baseline;
+}
+
+sup {
+    vertical-align: super;
+    font-size: 0.6em;
+}
+
+.resizing * {
+    transition: none !important;
+}
