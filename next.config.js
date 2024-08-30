@@ -7,7 +7,8 @@ const nextConfig = {
     trailingSlash: true,
     images: {
         unoptimized: true
-    }
+    },
+    basePath: '/web-client'
 }
 
 module.exports = nextConfig

@@ -1,0 +1,8 @@
+{
+    "title": "Manipulation avancée du DOM",
+    "description": "Démonstration de la manipulation plus complexe du DOM avec javascript afin d'insérer, modifier ou supprimer des éléments, des propriétés ou des évènements dans le HTML de vos projets Web. Nous verrons aussi les impacts de ces manipulations sur la performance de vos pages Web.",
+    "disabled": true,
+    "pages": [
+
+    ]
+}

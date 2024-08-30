@@ -1,0 +1,8 @@
+{
+    "title": "Introduction au Javascript",
+    "description": "Introduction au langage de programmation Javascript. Nous verrons les différents éléments de base d'un langage de programmation, comme les variables, les conditions, les boucles ainsi que les structures de données de ce langage. Finalement, nous introduisons aussi les outils de développement, comme les débogueurs pour Javascript.",
+    "disabled": true,
+    "pages": [
+
+    ]
+}
