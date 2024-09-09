@@ -1,8 +1,12 @@
 {
     "title": "Balises HTML de contenu",
     "description": "Une vue rapide des différentes balises HTML plus complexes. Nous voyons comment ajouter des liens, des tableaux et des médias à nos pages Web. Finalement, nous passerons un court instant sur les balises sémantiques et la validation du HTML.",
-    "disabled": true,
     "pages": [
-
+        "semantic",
+        "link",
+        "table",
+        "media",
+        "display",
+        "valid"
     ]
 }
