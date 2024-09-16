@@ -1,7 +1,6 @@
 {
     "title": "Introduction au CSS",
     "description": "Une introduction au design de page Web avec CSS. Nous verrons comment manipuler la couleur de différents éléments, changer la taille et l'espacement entre les éléments, ajouter des bordures ainsi que modifier l'affichage des élément. Le tout sera accompli en utilisant les sélecteurs CSS de base.",
-    "disabled": true,
     "pages": [
 
     ]
