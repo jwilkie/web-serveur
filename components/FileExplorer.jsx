@@ -2,10 +2,10 @@ import { isArchive, isAudio, isImage, isPDF, isVideo } from '@/utils/fileType';
 
 import styles from './FileExplorer.module.css';
 
-export function File({ name }) {
+export function File({ name, highlight }) {
     const extension = name.substring(name.lastIndexOf('.')).toLowerCase();
 
-    return <li className={styles.node}>
+    return <li className={styles.node + (highlight ? ' ' + styles.highlight : '')}>
         <div>
             {isArchive(extension) ?
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.997 19.06c0 1.277-2.996 1.268-2.996.003 0-1.314 2.996-1.344 2.996-.003zm11.003-8.06v13h-20v-24h8.409c4.857 0 3.335 8 3.335 8 3.009-.745 8.256-.419 8.256 3zm-14-4h3v-1h-3v1zm0-2h3v-1h-3v1zm0-2h3v-1h-3v1zm0 6h3v-1h-3v1zm0 2h3v-1h-3v1zm0 2h3v-1h-3v1zm3.925 5.5l-.925-4.5h-3l-.925 4.5c-.393 1.578.801 2.5 2.425 2.5 1.626 0 2.817-.924 2.425-2.5zm3.984-12.723c2.047-.478 4.805.279 6.091 1.179-1.494-1.998-5.23-5.708-7.432-6.881 1.156 1.168 1.563 4.234 1.341 5.702z" /></svg>
@@ -26,9 +26,9 @@ export function File({ name }) {
     </li>
 }
 
-export function Folder({ children, name }) {
+export function Folder({ children, name, highlight }) {
     return <li className={styles.node}>
-        <div>
+        <div className={highlight ? styles.highlight : ''}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 22h-20l-2-13h24l-2 13zm.406-15l.594-3h-13c-1.979 0-2.041-.417-3.306-2h-5.694l.605 5h20.801z"/></svg>
             <span>{name}</span>
         </div>

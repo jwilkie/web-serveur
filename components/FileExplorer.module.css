@@ -37,3 +37,8 @@
     padding-left: 1.5rem;
     border-left: 1px dashed var(--file-explorer-folder-color);
 }
+
+.highlight {
+    background-color: var(--file-explorer-highlight-color);
+    outline: 1px dashed var(--file-explorer-highlight-outline-color);
+}

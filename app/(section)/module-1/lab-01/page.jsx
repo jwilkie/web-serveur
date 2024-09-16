@@ -276,7 +276,7 @@ export default function Page() {
                 </Folder>
                 <Folder name="ressources">
                     <Folder name="images">
-                        <File name="image.jpg"></File>
+                        <File name="image.jpg" highlight></File>
                         <File name="image2.png"></File>
                     </Folder>
                     <File name="video.mp4"></File>
@@ -286,7 +286,7 @@ export default function Page() {
                 </Folder>
                 <Folder name="Ceci">
                     <Folder name="Est">
-                        <Folder name="Un">
+                        <Folder name="Un" highlight>
                             <Folder name="Test pour voir">
                                 <Folder name="Comment la longueur">
                                     <Folder name="Réagit">
