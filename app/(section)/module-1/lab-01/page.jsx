@@ -11,6 +11,7 @@ import { FileExplorer, Folder, File } from "@/components/FileExplorer";
 import Spoiler from "@/components/Spoiler";
 
 import testImage from "@/public/img/e-cite.png";
+import Color from "@/components/Color";
 
 /**
  * @type {import("next").Metadata}
@@ -106,6 +107,21 @@ export default function Page() {
             <div>
                 Exponent: 3<sup>5</sup>, 2<sup>ème</sup>
             </div>
+        </section>
+
+        <section>
+            <h2>Couleurs</h2>
+            <div>
+                <Color value="#000" />, <Color value="#456" />
+                <p>
+                    Lorem ipsum dolor sit amet consectetur <Color value="#aa0000" /> adipisicing <IC>elit</IC>. <IC>Amet</IC> cumque, soluta eligendi quaerat quisquam explicabo modi temporibus, voluptas odit inventore quasi reprehenderit, quidem tenetur. Ipsam placeat ullam reprehenderit at velit?
+                </p>
+            </div>
+            <ul>
+                <li><Color value="#25a83f" /></li>
+                <li><Color value="#2548a8" /></li>
+                <li><Color value="rgb(168, 37, 127)" /></li>
+            </ul>
         </section>
 
         <section>
