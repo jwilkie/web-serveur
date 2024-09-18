@@ -39,7 +39,7 @@ export default async function Group({ params }) {
                 )}
             </ul>
         :
-            sections.filter((section) => section.groups[group.slug] && !section.disabled).map((section, index) =>
+            sections.map((section, index) => section.groups[group.slug] && !section.disabled &&
                 <Fragment key={section.slug}>
                     <h2>{capitalize(appConfig.sectionName)} {index + 1} - {section.title}</h2>
                     <ul className={styles.list}>
