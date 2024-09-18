@@ -1,14 +1,8 @@
 {
-    "title": "Introduction au HTML et aux outils",
-    "description": "Une introduction au développement web, en commençant par la base du HTML. Dans ce module, nous présenterons, installerons et utiliserons le logiciel d'édition de code pour ce cours. De plus, nous verrons comment créer la base d'un projet web et le programmer à l'aide de balise HTML simple.",
+    "title": "Module 1",
+    "description": "Description de module",
     "pages": [
-        "intro-web",
-        "vscode",
-        "project",
-        "intro-html",
-        "balise",
-        "special",
-        "lab-installation",
-        "lab-html-1"
+        "test2",
+        "lab-01"
     ]
 }

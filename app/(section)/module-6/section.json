@@ -1,8 +1,0 @@
-{
-    "title": "Mise en page et positionnement",
-    "description": "Présentation des meilleures techniques en CSS pour modifier la mise en page d'un site web ainsi que de positionner ses éléments aux bons endroits. Nous ferons donc une introduction à l'affichage flex et grid ainsi qu'aux différentes méthodes de positionnement.",
-    "disabled": true,
-    "pages": [
-
-    ]
-}

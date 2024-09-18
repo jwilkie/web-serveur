@@ -1,8 +1,0 @@
-{
-    "title": "Introduction au DOM",
-    "description": "Une vue rapide du modèle objet de document (DOM) pour y rechercher des éléments HTML, les manipuler légèrement et leur ajouter des évènements. Le tout commencera à lier le HTML, le Javascript et le CSS ensemble pour la première fois pour en faire des applications plus complexe.",
-    "disabled": true,
-    "pages": [
-
-    ]
-}
