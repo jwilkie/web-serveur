@@ -10,6 +10,7 @@ import 'normalize.css/normalize.css'
 import '@/styles/globals.css'
 import '@/styles/themes.css'
 import styles from './layout.module.css'
+import appConfig from '@/app.config'
 
 const comfortaa = Comfortaa({
     subsets: ['latin'],
@@ -31,6 +32,10 @@ const opensans = Open_Sans({
     display: 'swap',
     variable: '--font-open-sans'
 });
+
+export const metadata = {
+    metadataBase: new URL(appConfig.domain)
+}
 
 export default async function RootLayout({ children }) {
     let sections = await getSections();
