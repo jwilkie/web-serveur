@@ -15,13 +15,9 @@ export async function generateStaticParams() {
         .map((section) => ({ section: section.slug }));
 }
 
-/**
- * 
- * @param {*} param0 
- * @returns {import('next').Metadata}
- */
-export async function generateMetadata({ params }) {
-    let section = await getSectionBySlug(params.section)
+export async function generateMetadata({params}) {
+    const { section: slug } = await params;
+    let section = await getSectionBySlug(slug);
 
     return {
         title: section.title,
@@ -29,10 +25,11 @@ export async function generateMetadata({ params }) {
     }
 }
 
-export default async function Section({ params }) {
-    let section = await getSectionBySlug(params.section);
+export default async function Section({params}) {
+    const { section: slug } = await params;
+    let section = await getSectionBySlug(slug);
     let groups = await getGroups();
-    let index = params.section.substring(appConfig.sectionName.length + 1)
+    let index = slug.substring(appConfig.sectionName.length + 1)
 
     return <section className={styles.section}>
         <div className={styles.header}>

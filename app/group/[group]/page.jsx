@@ -16,7 +16,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({params}) {
-    let group = await getGroupBySlug(params.group);
+    const { group: slug } = await params;
+    let group = await getGroupBySlug(slug);
 
     return {
         title: group.title,
@@ -24,9 +25,10 @@ export async function generateMetadata({params}) {
     }
 }
 
-export default async function Group({ params }) {
-    let group = await getGroupBySlug(params.group);
-    let sections = await getSections();
+export default async function Group({params}) {
+    const { group: slug } = await params;
+    const group = await getGroupBySlug(slug);
+    const sections = await getSections();
 
     return <>
         <h1>{group.title}</h1>

@@ -1,4 +1,4 @@
-import createIcon from '@/utils/createImage';
+import { createIcon } from '@/utils/createImage';
 
 export const dynamic = 'force-static';
 
