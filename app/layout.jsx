@@ -11,6 +11,7 @@ import '@/styles/globals.css'
 import '@/styles/themes.css'
 import styles from './layout.module.css'
 import appConfig from '@/app.config'
+import nextConfig from '@/next.config.mjs'
 
 const comfortaa = Comfortaa({
     subsets: ['latin'],
@@ -34,7 +35,7 @@ const opensans = Open_Sans({
 });
 
 export const metadata = {
-    metadataBase: new URL(appConfig.domain)
+    metadataBase: new URL(appConfig.domain.replace(nextConfig.basePath, ''))
 }
 
 export default async function RootLayout({ children }) {
