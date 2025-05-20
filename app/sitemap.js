@@ -2,6 +2,12 @@ import appConfig from "@/app.config";
 import { getGroups } from "@/model/group";
 import { getSections } from "@/model/section"
 
+export const dynamic = 'force-static';
+
+/**
+ * Return the data to generate the sitemap.xml file.
+ * @returns {import("next").MetadataRoute.Sitemap}
+ */
 export default async function sitemap() {
     let sections = await getSections();
     let groups = await getGroups();

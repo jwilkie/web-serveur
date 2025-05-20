@@ -7,7 +7,7 @@ import csharp from 'react-syntax-highlighter/dist/cjs/languages/prism/csharp'
 
 const appConfig = {
     domain: 'https://jwilkie.github.io/website-template',
-    title: 'Programmation Web Serveur',
+    title: 'Website Template',
     sectionName: 'module',
     code: {
         languages: {
