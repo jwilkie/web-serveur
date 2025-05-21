@@ -35,7 +35,18 @@ const opensans = Open_Sans({
 });
 
 export const metadata = {
-    metadataBase: new URL(appConfig.domain.replace(nextConfig.basePath, ''))
+    metadataBase: new URL(appConfig.domain),
+    openGraph: {
+        images: [
+            {
+                url: `./og.png`,
+                alt: appConfig.title,
+                type: 'image/png',
+                width: 1200,
+                height: 630
+            }
+        ]
+    }
 }
 
 export default async function RootLayout({ children }) {
