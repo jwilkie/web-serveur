@@ -18,9 +18,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({params}) {
     const { section: slug } = await params;
     let section = await getSectionBySlug(slug);
+    let index = slug.substring(appConfig.sectionName.length + 1)
 
     return {
-        title: section.title,
+        title: `${capitalize(appConfig.sectionName)} ${index}`,
         description: section.description
     }
 }

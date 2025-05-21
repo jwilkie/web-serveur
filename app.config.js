@@ -8,6 +8,7 @@ import csharp from 'react-syntax-highlighter/dist/cjs/languages/prism/csharp'
 const appConfig = {
     domain: 'https://jwilkie.github.io/website-template',
     title: 'Website Template',
+    description: 'Gabarit de base pour des site web de notes de cours.',
     sectionName: 'module',
     code: {
         languages: {

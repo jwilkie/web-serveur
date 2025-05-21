@@ -10,26 +10,32 @@ import styles from './page.module.css'
  * @type {import('next').Metadata}
  */
 export const metadata = {
-    title: appConfig.title,
+    title: `Accueil | ${appConfig.title}`,
     description: `Accueil et table des matières du cours ${appConfig.title}.`
 }
 
 export default async function Home() {
     let sections = await getSections();
 
-    return <ul className={styles.list} >
-        { sections.map((section, index) => (
-            <li key={index} className={(section.disabled ? styles.disabled : '')}>
-                <Bubble name={capitalize(appConfig.sectionName)} number={index + 1} />
-                <div className={ styles.description }>
-                    {!section.disabled ? 
-                        <Link href={`/${section.slug}/`} className={styles.link}><h2>{section.title}</h2></Link>
-                        :
-                        <h2>{section.title}</h2>
-                    }
-                    <p>{section.description}</p>
-                </div>
-            </li>
-        )) }
-    </ul>
+    return <>
+        <div className={styles.text}>
+            {appConfig.description}
+        </div>
+
+        <ul className={styles.list}>
+            { sections.map((section, index) => (
+                <li key={index} className={(section.disabled ? styles.disabled : '')}>
+                    <Bubble name={capitalize(appConfig.sectionName)} number={index + 1} />
+                    <div className={ styles.description }>
+                        {!section.disabled ? 
+                            <Link href={`/${section.slug}/`} className={styles.link}><h2>{section.title}</h2></Link>
+                            :
+                            <h2>{section.title}</h2>
+                        }
+                        <p>{section.description}</p>
+                    </div>
+                </li>
+            )) }
+        </ul>
+    </>
 }

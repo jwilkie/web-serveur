@@ -11,7 +11,6 @@ import '@/styles/globals.css'
 import '@/styles/themes.css'
 import styles from './layout.module.css'
 import appConfig from '@/app.config'
-import nextConfig from '@/next.config.mjs'
 
 const comfortaa = Comfortaa({
     subsets: ['latin'],
@@ -34,8 +33,15 @@ const opensans = Open_Sans({
     variable: '--font-open-sans'
 });
 
+/**
+ * @type {import('next').Metadata}
+ */
 export const metadata = {
     metadataBase: new URL(appConfig.domain),
+    title: {
+        template: `%s | ${appConfig.title}`,
+        default: appConfig.title
+    },
     openGraph: {
         images: [
             {
