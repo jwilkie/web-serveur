@@ -24,7 +24,8 @@ export async function createIcon(size, fontSize) {
             height: '100%',
             color: colors['--text-inverted-color'],
             background: `linear-gradient(to bottom, ${colors['--bg-accent-color']}, ${colors['--bg-accent-gradient-color']} 70%);`,
-            fontSize: `${fontSize}px`
+            fontSize: `${fontSize}px`,
+            fontWeight: 700
         }}>
             {acronym(appConfig.title)}
         </div>,
@@ -84,7 +85,7 @@ export async function createOGImage(subTitle, pageTitle) {
                 display: 'flex',
                 fontSize: `50px`
             }}>
-                {subTitle || <span>&nbsp;</span>}
+                {subTitle}
             </div>
 
             {/* Page title */}
@@ -92,7 +93,7 @@ export async function createOGImage(subTitle, pageTitle) {
                 display: 'flex',
                 fontSize: `50px`
             }}>
-                {pageTitle || <span>&nbsp;</span>}
+                {pageTitle}
             </div>
         </div>, 
         {
