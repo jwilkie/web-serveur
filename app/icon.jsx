@@ -2,13 +2,32 @@ import { createIcon } from '@/utils/createImage';
 
 export const dynamic = 'force-static';
 
-export const size = {
-    width: 32,
-    height: 32
+const icons = [
+    {
+        id: 'small',
+        contentType: 'image/png',
+        size: { width: 32, height: 32 },
+        fontSize: 18,
+        media: '(prefers-color-scheme: light)'
+    },
+    {
+        id: 'large',
+        contentType: 'image/png',
+        size: { width: 192, height: 192 },
+        fontSize: 110,
+        media: '(prefers-color-scheme: light)'
+    },
+]
+
+export function generateStaticParams() {
+    return icons.map(({ id }) => ({ '__metadata_id__': id }))
 }
 
-export const contentType = 'image/png';
+export function generateImageMetadata() {
+    return icons;
+}
 
-export default async function Icon() {
-    return await createIcon(size, 18);
+export default async function Icon({ id }) {
+    const icon = icons.find((icon) => icon.id === id)
+    return createIcon(icon.size);
 }

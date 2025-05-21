@@ -10,5 +10,5 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Icon() {
-    return await createIcon(size, 100);
+    return await createIcon(size);
 }
