@@ -1,5 +1,6 @@
 import appConfig from "@/app.config";
 import { icons } from "@/model/icons";
+import nextConfig from "@/next.config.mjs";
 import { getColors } from "@/utils/createImage";
 
 export const dynamic = 'force-static';
@@ -15,7 +16,8 @@ export default async function manifest() {
         name: appConfig.title,
         short_name: appConfig.title,
         description: appConfig.description,
-        start_url: '/',
+        start_url: nextConfig.basePath || '/',
+        scope: nextConfig.basePath || '/',
         display: 'standalone',
         theme_color: colors['--bg-accent-color'],
         background_color: colors['--bg-color'],
