@@ -1,6 +1,5 @@
 import appConfig from "@/app.config";
 import { icons } from "@/model/icons";
-import nextConfig from "@/next.config.mjs";
 import { getColors } from "@/utils/createImage";
 
 export const dynamic = 'force-static';
