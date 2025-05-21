@@ -16,19 +16,19 @@ export default async function manifest() {
         name: appConfig.title,
         short_name: appConfig.title,
         description: appConfig.description,
-        start_url: nextConfig.basePath || '/',
-        scope: nextConfig.basePath || '/',
+        start_url: '/',
+        scope: '/',
         display: 'standalone',
         theme_color: colors['--bg-accent-color'],
         background_color: colors['--bg-color'],
         icons: [
             ...icons.map((icon) => ({
-                src: `/icon/${icon.id}`,
+                src: `icon/${icon.id}`,
                 sizes: `${icon.size.width}x${icon.size.height}`,
                 type: icon.contentType
             })),
             {
-                src: '/apple-icon',
+                src: 'apple-icon',
                 sizes: '180x180',
                 type: 'image/png'
             }
