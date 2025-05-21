@@ -4,11 +4,15 @@ import acronym from '@/utils/acronym';
 import { ImageResponse } from "next/og";
 import { readFile } from 'node:fs/promises';
 
-export async function createIcon(size) {
+export async function createIcon(size, theme) {
     const data = await readFile('./styles/themes.css');
-    const colors = data.toString().replace(/[\r \;]/g, '').split('\n')
+    const colorsArray = data.toString().replace(/[\r \;]/g, '').split('\n')
         .filter((line) => line.includes('--bg-accent') || line.includes('--text-inverted-color'))
-        .slice(0, 3).map((line) => line.split(':'))
+        .map((line) => line.split(':'));
+        
+    const colors = colorsArray.filter((line, index) => theme === 'dark' ? 
+            index >= colorsArray.length / 2 : 
+            index < colorsArray.length / 2 )
         .reduce((colors, line) => ({ [line[0]]: line[1], ...colors }), {});
 
     const fontSizeMultiplier = 0.575;
@@ -45,11 +49,15 @@ export async function createIcon(size) {
     )
 }
 
-export async function createOGImage(subTitle, pageTitle) {
+export async function createOGImage(subTitle, pageTitle, theme) {
     const data = await readFile('./styles/themes.css');
-    const colors = data.toString().replace(/[\r \;]/g, '').split('\n')
+    const colorsArray = data.toString().replace(/[\r \;]/g, '').split('\n')
         .filter((line) => line.includes('--bg-accent') || line.includes('--text-inverted-color'))
-        .slice(0, 3).map((line) => line.split(':'))
+        .map((line) => line.split(':'));
+        
+    const colors = colorsArray.filter((line, index) => theme === 'dark' ? 
+            index >= colorsArray.length / 2 : 
+            index < colorsArray.length / 2 )
         .reduce((colors, line) => ({ [line[0]]: line[1], ...colors }), {});
 
     const openSans = await readFile(
