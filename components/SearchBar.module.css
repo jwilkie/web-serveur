@@ -29,15 +29,10 @@
     z-index: 20;
 }
 
-.search input[type=search]:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--search-input-border-color);
-}
-
 .search input[type=submit] {
     width: 6rem;
     padding: 0;
-    border: 2px solid var(--search-input-border-color);
+    border: 2px solid transparent;
     border-radius: 0 18px 18px 0;
     background-color: var(--search-submit-bg-color);
     color: var(--search-submit-text-color);

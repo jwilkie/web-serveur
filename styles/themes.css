@@ -4,7 +4,6 @@
     --bg-color: #fff;
     --bg-accent-color: #f78f20;
     --bg-accent-gradient-color: #faa754;
-    --search-border-color: #a19d97;
     --search-input-bg-color: #fdddbc;
     --search-submit-bg-color: #6d6a62;
     --search-submit-text-color: #fff;
@@ -47,6 +46,9 @@
     --file-explorer-highlight-outline-color: #faa754;
     --spoiler-button-color: #f78f20;
     --spoiler-button-shown-color: #faa754;
+    --card-border-color: #f78f20;
+    --card-hover-bg-color: #faa754;
+    --card-filter-border-color: #6d6a62;
 }
 
 [data-theme='dark'] {
@@ -55,7 +57,6 @@
     --bg-color: #36352e;
     --bg-accent-color: #eb5539;
     --bg-accent-gradient-color: #f3734e;
-    --search-border-color: #a19d97;
     --search-input-bg-color: #fdddbc;
     --search-submit-bg-color: #6d6a62;
     --search-submit-text-color: #fff;
@@ -98,4 +99,7 @@
     --file-explorer-highlight-outline-color: #f3734e;
     --spoiler-button-color: #eb5539;
     --spoiler-button-shown-color: #f3734e;
+    --card-border-color: #eb5539;
+    --card-hover-bg-color: #f3734e;
+    --card-filter-border-color: #6d6a62;
 }
