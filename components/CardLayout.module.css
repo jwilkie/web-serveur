@@ -19,6 +19,7 @@
 }
 
 .card {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -42,12 +43,14 @@
 
 .title {
     font-family: monospace;
-    font-size: 1.1rem;
+    font-size: .9rem;
     font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .content {
-    font-size: .9rem;
+    font-size: .7rem;
 }
 
 .content p {
@@ -62,5 +65,13 @@
     .layout {
         grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
         grid-auto-rows: 10px;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .content {
+        font-size: .9rem;
     }
 }

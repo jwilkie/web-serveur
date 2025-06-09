@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     align-content: center;
+    gap: .5rem;
     flex-wrap: wrap;
     height: 6.55rem;
     margin-right: var(--main-padding);
@@ -13,8 +14,8 @@
 }
 
 .breadcrumb > span {
-    display: inline-block;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
 }
 
 .breadcrumb a:hover {
@@ -25,6 +26,17 @@
     margin: 0 .8em;
     font-weight: bold;
     color: var(--bg-accent-color);
+}
+
+@media(min-width: 25rem) {
+    .breadcrumb {
+        gap: 0;
+    }
+
+    .breadcrumb > span {
+        display: inline-block;
+        white-space: nowrap;
+    }
 }
 
 @media(min-width: 960px){
