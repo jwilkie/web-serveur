@@ -1,0 +1,6 @@
+{ 
+    "label": "Ressources",
+    "title": "Ressources externes",
+    "description": "Des liens vers chaque ressource externe utilisée sur ce site.",
+    "noIndex": true
+}
