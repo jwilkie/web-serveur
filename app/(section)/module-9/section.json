@@ -1,0 +1,8 @@
+{
+    "title": "Communication bidirectionnelle",
+    "description": "Présentation des différents types de communication entre un client et un serveur avec le protocole HTTP et de l'utilisation de technologie pour permettre la communication bidirectionnelle.",
+    "disabled": true,
+    "pages": [
+
+    ]
+}

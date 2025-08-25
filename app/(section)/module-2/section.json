@@ -1,6 +1,7 @@
 {
-    "title": "Titre de module",
-    "description": "Description de module",
+    "title": "Introduction à Express.js",
+    "description": "Introduction aux notions client-serveur de base et présentation de Express.js, une plateforme pour créer des serveurs web sur Node.js.",
+    "disabled": true,
     "pages": [
 
     ]

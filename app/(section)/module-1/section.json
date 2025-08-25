@@ -1,8 +1,8 @@
 {
-    "title": "Module 1",
-    "description": "Description de module",
+    "title": "Programmation asynchrone",
+    "description": "Introduction à Node.js ainsi qu'au concept de programmation asynchrone dans le langage Javascript",
+    "disabled": true,
     "pages": [
-        "test2",
-        "lab-01"
+        
     ]
 }

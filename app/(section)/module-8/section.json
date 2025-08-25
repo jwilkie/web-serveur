@@ -1,0 +1,8 @@
+{
+    "title": "Session et Authentification",
+    "description": "Présentation de l'utilisation des sessions pour maintenir des informations entre les appels réseaux et pour faire l'authentification d'un client sur le serveur.",
+    "disabled": true,
+    "pages": [
+
+    ]
+}
