@@ -1,8 +1,19 @@
 {
-    "title": "Programmation asynchrone",
+    "title": "Node.js et Programmation asynchrone",
     "description": "Introduction à Node.js ainsi qu'au concept de programmation asynchrone dans le langage Javascript",
-    "disabled": true,
     "pages": [
-        
+        "intro",
+        "tools",
+        "intro-node",
+        "project",
+        "import",
+        "modules",
+        "async",
+        "promise",
+        "io-terminal",
+        "io-files",
+        "lab-install",
+        "lab-node",
+        "lab-hangman"
     ]
 }

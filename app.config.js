@@ -3,6 +3,7 @@ import vsdark from 'react-syntax-highlighter/dist/cjs/styles/prism/vsc-dark-plus
 import html from 'react-syntax-highlighter/dist/cjs/languages/prism/markup'
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
 import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
+import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
 import terminal from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
 import handlebars from 'react-syntax-highlighter/dist/cjs/languages/prism/handlebars'
 
@@ -16,6 +17,7 @@ const appConfig = {
             'html': { tag: 'HTML', renderer: html },
             'css': { tag: 'CSS', renderer: css },
             'js': { tag: 'Javascript', renderer: js },
+            'json': { tag: 'JSON', renderer: json },
             'terminal': { tag: 'Terminal', renderer: terminal },
             'handlebars': { tag: 'Handlebars', renderer: handlebars },
         },
