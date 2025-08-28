@@ -3,7 +3,7 @@ import { join } from 'path/posix';
 
 async function getSectionPages(section) {
     // Get pages from configs array
-    let pageSlugs = section.pages;
+    let pageSlugs = section.pages || [];
 
     // Get pages from section directory
     let pageSlugsFromDirectory = (await readdir(join(process.cwd(), 'app', '(section)', section.slug), { withFileTypes: true }))
