@@ -1,4 +1,5 @@
 {
+    "$schema": "../../../model/section.schema.json",
     "title": "Node.js et Programmation asynchrone",
     "description": "Introduction à Node.js ainsi qu'au concept de programmation asynchrone dans le langage Javascript",
     "pages": [

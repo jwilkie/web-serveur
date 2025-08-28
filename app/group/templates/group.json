@@ -1,4 +1,5 @@
 { 
+    "$schema": "../../../model/group.schema.json",
     "label": "Gabarits",
     "title": "Gabarits",
     "description": "Listes des gabarits de projet web que vous pouvez utilisé dans le cours."

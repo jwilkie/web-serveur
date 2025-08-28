@@ -1,4 +1,5 @@
 {
+    "$schema": "../../../model/section.schema.json",
     "title": "Protocole sécurisé",
     "description": "Utilisation des derniers protocoles de communication pour sécuriser le communications entre un client et un serveur.",
     "disabled": true,

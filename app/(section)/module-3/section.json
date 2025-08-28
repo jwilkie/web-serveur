@@ -1,4 +1,5 @@
 {
+    "$schema": "../../../model/section.schema.json",
     "title": "Protocole HTTP",
     "description": "Introduction au protocole HTTP, aux API REST et aux données en format JSON. Démonstration de programmation de routes et d'utilisation de route statique sur Express.js.",
     "disabled": true,
