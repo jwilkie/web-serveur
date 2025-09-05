@@ -6,6 +6,7 @@ import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
 import terminal from 'react-syntax-highlighter/dist/cjs/languages/prism/bash'
 import handlebars from 'react-syntax-highlighter/dist/cjs/languages/prism/handlebars'
+import env from 'react-syntax-highlighter/dist/cjs/languages/prism/properties'
 
 const appConfig = {
     domain: 'https://jwilkie.github.io/web-serveur',
@@ -20,6 +21,7 @@ const appConfig = {
             'json': { tag: 'JSON', renderer: json },
             'terminal': { tag: 'Terminal', renderer: terminal },
             'handlebars': { tag: 'Handlebars', renderer: handlebars },
+            'env': { tag: 'Configuration', renderer: env },
         },
         themes: {
             light: vs,

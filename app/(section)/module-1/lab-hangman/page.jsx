@@ -1,4 +1,4 @@
-import { DownloadBlock, File } from '@/components/DownloadBlock';
+import { DownloadBlock, File } from '@/components/DownloadBlock'
 
 /**
  * @type {import("next").Metadata}
