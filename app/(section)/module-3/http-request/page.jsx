@@ -1,177 +1,234 @@
 import IC from '@/components/InlineCode'
-import CodeBlock from '@/components/CodeBlock'
+import OverflowContainer from '@/components/OverflowContainer'
+import BorderedBox from '@/components/BorderedBox'
 
 /**
  * @type {import("next").Metadata}
  */
 export const metadata = {
-    title: "La requête HTTP",
-    description: "Structure et composants d'une requête HTTP : méthodes, URL, en-têtes et corps du message.",
-    keywords: ["http", "requête", "méthodes", "url", "headers"],
+    title: "Requête HTTP",
+    description: "Présentation de la structure et des composants d'une requête HTTP .",
+    keywords: ["http", "requête", "méthodes", "url", "get", "post", "put", "delete", "patch", "body", "params", "query", "data"],
     group: "notes"
 }
-
-const requestExample = 
-`GET /api/users/123 HTTP/1.1
-Host: example.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
-Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-Content-Type: application/json`;
-
-const postExample = 
-`POST /api/users HTTP/1.1
-Host: example.com
-Content-Type: application/json
-Content-Length: 85
-
-{
-  "name": "Jean Dupont",
-  "email": "jean.dupont@example.com",
-  "age": 30
-}`;
-
-const curlExample = 
-`# Requête GET simple
-curl -X GET "https://api.example.com/users/123"
-
-# Requête POST avec données JSON
-curl -X POST "https://api.example.com/users" \\
-  -H "Content-Type: application/json" \\
-  -d '{"name": "Jean Dupont", "email": "jean@example.com"}'
-
-# Requête avec en-têtes d'authentification
-curl -X GET "https://api.example.com/protected" \\
-  -H "Authorization: Bearer your-token-here"`;
 
 export default function Page() {
     return <>
         <section>
-            <h2>Structure d'une requête HTTP</h2>
+            <h2>Structure de la requête HTTP</h2>
             <p>
-                Une requête HTTP est composée de plusieurs éléments essentiels qui permettent au client de 
-                communiquer avec le serveur. Voici la structure générale d'une requête:
-            </p>
-            <CodeBlock language="http">{requestExample}</CodeBlock>
-            <p>
-                Cette requête est composée de trois parties principales:
+                Une requête HTTP est un message envoyé par le client (navigateur web) au serveur pour demander une action ou des 
+                informations. La requête a toujours la même structure de base et contient 3 parties principales qui nous intéresseront 
+                dans ce cours:
             </p>
             <ul>
-                <li><strong>Ligne de requête</strong>: Contient la méthode, l'URL et la version HTTP</li>
-                <li><strong>En-têtes</strong>: Métadonnées sur la requête</li>
-                <li><strong>Corps (optionnel)</strong>: Données à envoyer au serveur</li>
+                <li>La méthode HTTP</li>
+                <li>Adresse du serveur et la route</li>
+                <li>Données à envoyer</li>
             </ul>
         </section>
 
         <section>
             <h2>Les méthodes HTTP</h2>
             <p>
-                Les méthodes HTTP définissent l'action que le client souhaite effectuer sur la ressource. 
-                Voici les principales méthodes utilisées dans le développement web:
+                Les méthodes HTTP définissent l'action que le client souhaite effectuer sur la serveur. Ils sont basé sur le concept
+                de CRUD (Create, Read, Update, Delete) utilisé dans la gestion des données. En bref, ça nous indique si la requête 
+                sert à faire des recherches, à ajouter, à modifier ou à supprimer des données. Chaque requête HTTP possède une seule 
+                méthode HTTP.
             </p>
-            <ul>
-                <li>
-                    <strong>GET</strong>: Récupère des données du serveur. Ne doit pas modifier l'état du serveur. 
-                    <em>Exemple: récupérer la liste des utilisateurs</em>
-                </li>
-                <li>
-                    <strong>POST</strong>: Envoie des données au serveur pour créer une nouvelle ressource. 
-                    <em>Exemple: créer un nouvel utilisateur</em>
-                </li>
-                <li>
-                    <strong>PUT</strong>: Met à jour une ressource existante ou la crée si elle n'existe pas. 
-                    <em>Exemple: modifier complètement un utilisateur</em>
-                </li>
-                <li>
-                    <strong>PATCH</strong>: Met à jour partiellement une ressource existante. 
-                    <em>Exemple: modifier seulement l'email d'un utilisateur</em>
-                </li>
-                <li>
-                    <strong>DELETE</strong>: Supprime une ressource du serveur. 
-                    <em>Exemple: supprimer un utilisateur</em>
-                </li>
-                <li>
-                    <strong>OPTIONS</strong>: Demande les méthodes supportées par le serveur pour une ressource
-                </li>
-                <li>
-                    <strong>HEAD</strong>: Similaire à GET mais ne retourne que les en-têtes, pas le corps
-                </li>
-            </ul>
+            <p>
+                Voici les méthodes HTTP qui nous intéressent pour ce cours:
+            </p>
+            <OverflowContainer>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Méthode</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>
+                                Permet d'aller chercher une ressource sur le serveur. Quand vous naviguez sur un site Web, chaque 
+                                fichier HTML, CSS et Javascript est demandé par une requêtes <IC>GET</IC> qui est faite automatiquement 
+                                par votre navigateur Web.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>
+                                Permet d'envoyer des données au serveur pour créer une nouvelle ressource. On l'utilise souvent pour
+                                envoyer des données de formulaire ou pour ajouter des données à une base de données.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PUT</td>
+                            <td>
+                                Permet de mettre à jour une ressource existante. Elle remplace complètement une ressource ou donnée 
+                                existante par une nouvelle version.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>PATCH</td>
+                            <td>
+                                Permet de mettre à jour partiellement une ressource existante. Contrairement à <IC>PUT</IC>, elle ne
+                                remplace que des champs spécifiques de la ressource ou donnée et non son entièreté.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>
+                                Permet de supprimer une ressource sur le serveur. On l'utilise souvent pour supprimer des données d'une 
+                                base de données ou pour retirer des fichiers.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </OverflowContainer>
+            <p>
+                Il existe d'autres méthodes HTTP, mais nous ne les utiliserons pas dans ce cours. Si vous êtes intéressé à en savoir plus,
+                je vous conseille de visiter la page suivante:
+            </p>
+            <p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods" target="_blank">MDN - HTTP request methods</a>
+            </p>
         </section>
 
         <section>
-            <h2>URL et paramètres</h2>
+            <h2>Adresse du serveur et la route</h2>
             <p>
-                L'URL (Uniform Resource Locator) identifie la ressource sur laquelle effectuer l'action. 
-                Elle peut contenir plusieurs types de paramètres:
+                L'adresse du serveur et la route son en fait une adresse URL qui nous permet de retrouver le serveur sur l'Internet
+                et de lui indiquer quelle élément on veut qu'il exécute. Lorsqu'on entre une adresse dans la barre d'adresse de notre
+                navigateur Web, on ajoute en fait cette adresse URL dans une requête HTTP en arrière-plan. Chaque requête HTTP doit
+                contenir une adresse URL.
             </p>
-            <ul>
-                <li>
-                    <strong>Paramètres de chemin</strong>: Intégrés dans l'URL
-                    <br /><IC>/api/users/123</IC> (où 123 est l'ID de l'utilisateur)
-                </li>
-                <li>
-                    <strong>Paramètres de requête (query)</strong>: Après le caractère <IC>?</IC>
-                    <br /><IC>/api/users?page=2&limit=10&sort=name</IC>
-                </li>
-                <li>
-                    <strong>Fragment</strong>: Après le caractère <IC>#</IC> (généralement côté client)
-                    <br /><IC>/page.html#section1</IC>
-                </li>
-            </ul>
+            <p>
+                Il est important de comprendre l'anatomie d'une adresse URL. Chacune de ses parties nous sera utile de façon différente.
+                Voici un exemple d'URL et de chacune de ses parties:
+            </p>
+            <BorderedBox>
+                http://www.exemple.com:4321/api/users?search=John&role=tech#section1
+            </BorderedBox>
+            <OverflowContainer>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Partie de l'URL</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><IC>http://</IC></td>
+                            <td>
+                                Le protocole utilisé pour la communication. On verra typiquement <IC>http</IC> ou <IC>https</IC>. Il est
+                                toutefois possible d'en voir d'autres comme <IC>ftp</IC>, <IC>ws</IC> ou encore <IC>file</IC>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><IC>www.exemple.com</IC></td>
+                            <td>
+                                Le nom de domaine ou l'adresse IP du serveur. C'est ce qui permet de localiser le serveur sur l'Internet.
+                                Les routeurs utilisent cette information pour acheminer la requête au bon endroit dans le grand réseau du 
+                                web.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><IC>:4321</IC></td>
+                            <td>
+                                Le port sur lequel le serveur écoute les requêtes. Par défaut, le port 80 est utilisé pour HTTP et le port 
+                                443 pour HTTPS. On a donc pas besoin de le spécifier dans l'URL si on utilise ces ports par défaut. 
+                                Toutefois, en développement ou pour des services spécifiques, on peut utiliser d'autres ports et là, il faut
+                                le spécifier dans l'URL.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><IC>/api/users</IC></td>
+                            <td>
+                                La route ou le chemin d'accès à la ressource sur le serveur. C'est ce qui permet au serveur de savoir quelle
+                                action ou ressource on veut. Le nom de la route est similaire au nom d'une fonction dans un programme. Le 
+                                développeur du serveur doit définir les routes avec leur nom et ce qu'elles font. Le client pourra ensuite
+                                appeler ces routes en utilisant leur nom dans l'URL.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><IC>?search=John &role=tech</IC></td>
+                            <td>
+                                Les paramètres de la requête, aussi appelés <em>Query Strings</em>. Ils permettent d'envoyer des informations
+                                supplémentaires au serveur directement dans l'adresse URL. Ils sont souvent utilisés pour envoyer des 
+                                données simples et sans grandes importances au serveur. Ils sont toujours placés après un <IC>?</IC> et
+                                chaque paramètre est séparé par un <IC>&</IC>. Chaque paramètre est constitué d'un nom et d'une valeur, 
+                                séparés par un <IC>=</IC>. Il est important de noter que les paramètres de la requête sont visibles et ne 
+                                peuvent pas être encryptés. Ils ne doivent donc pas être utilisés pour envoyer des informations sensibles,
+                                comme des mots de passe ou des informations personnelles.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><IC>#section1</IC></td>
+                            <td>
+                                Le fragment ou ancre. Il permet de pointer vers une section spécifique d'une ressource. On le voit souvent
+                                dans les pages Web pour naviguer rapidement à une section particulière. Le fragment n'est pas envoyé au 
+                                serveur dans une requête HTTP. Il nous est donc inutile dans ce contexte.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </OverflowContainer>
         </section>
 
         <section>
-            <h2>En-têtes HTTP importants</h2>
+            <h2>Données à envoyer</h2>
             <p>
-                Les en-têtes fournissent des informations supplémentaires sur la requête. Voici les plus couramment utilisés:
+                Les données à envoyer sont des informations supplémentaires que le client peut inclure dans la requête HTTP. Elles
+                sont souvent utilisées avec les méthodes <IC>POST</IC>, <IC>PUT</IC> et <IC>PATCH</IC> pour envoyer des données au serveur.
+                Dans une requête HTTP, on peut ajouter des données à 3 endroits différents:
             </p>
-            <ul>
-                <li><strong>Host</strong>: Nom de domaine du serveur (obligatoire en HTTP/1.1)</li>
-                <li><strong>User-Agent</strong>: Information sur le client (navigateur, application)</li>
-                <li><strong>Accept</strong>: Types de contenu acceptés par le client</li>
-                <li><strong>Content-Type</strong>: Type de contenu envoyé dans le corps de la requête</li>
-                <li><strong>Content-Length</strong>: Taille en octets du corps de la requête</li>
-                <li><strong>Authorization</strong>: Informations d'authentification</li>
-                <li><strong>Cookie</strong>: Cookies envoyés par le client</li>
-                <li><strong>Cache-Control</strong>: Directives de mise en cache</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Exemple de requête POST</h2>
-            <p>
-                Voici un exemple de requête POST qui envoie des données JSON pour créer un nouvel utilisateur:
-            </p>
-            <CodeBlock language="http">{postExample}</CodeBlock>
-            <p>
-                Dans cet exemple:
-            </p>
-            <ul>
-                <li>La méthode <IC>POST</IC> indique qu'on veut créer une ressource</li>
-                <li>L'URL <IC>/api/users</IC> indique l'endpoint pour les utilisateurs</li>
-                <li><IC>Content-Type</IC> spécifie que les données sont en format JSON</li>
-                <li><IC>Content-Length</IC> indique la taille des données</li>
-                <li>Le corps contient les données de l'utilisateur à créer</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Test de requêtes avec cURL</h2>
-            <p>
-                cURL est un outil en ligne de commande très utile pour tester les requêtes HTTP. 
-                Voici quelques exemples d'utilisation:
-            </p>
-            <CodeBlock language="bash">{curlExample}</CodeBlock>
-            <p>
-                cURL est particulièrement utile pour:
-            </p>
-            <ul>
-                <li>Tester rapidement une API pendant le développement</li>
-                <li>Déboguer des problèmes de communication</li>
-                <li>Automatiser des tests ou des scripts</li>
-                <li>Comprendre le comportement d'une API existante</li>
-            </ul>
+            <OverflowContainer>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Emplacement dans la requête</th>
+                            <th>Nom dans Express.js</th>
+                            <th>Description</th>
+                            <th>Sécurisé</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Query String</td>
+                            <td><IC>query</IC></td>
+                            <td>
+                                Permet d'envoyer des données dans le Query String de l'URL. Utile pour les données simples et non 
+                                sensibles. On ne peut pas envoyer de grandes quantités de données ou les chiffrer.
+                            </td>
+                            <td>Non</td>
+                        </tr>
+                        <tr>
+                            <td>Route de la requête</td>
+                            <td><IC>params</IC></td>
+                            <td>
+                                Permet d'envoyer des données directement dans la route de la requête. Utile pour identifier une ressource
+                                spécifique. Comme pour le Query String, on ne peut pas envoyer de grandes quantités de données ou les 
+                                chiffrer ici.
+                            </td>
+                            <td>Non</td>
+                        </tr>
+                        <tr>
+                            <td>Corps de la requête</td>
+                            <td><IC>body</IC></td>
+                            <td>
+                                Permet d'envoyer des données dans le corps de la requête. Utile pour envoyer de grandes quantités de 
+                                données ou des informations sensibles. Le corps de la requête peut être chiffré si on utilise HTTPS.
+                                Si on utilise une requête <IC>GET</IC>, on ne peut pas théoriquement pas envoyer de données dans le 
+                                corps. C'est une limitation du protocole HTTP.
+                            </td>
+                            <td>Oui, si HTTPS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </OverflowContainer>
         </section>
     </>
 }

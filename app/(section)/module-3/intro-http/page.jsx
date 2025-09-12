@@ -13,69 +13,51 @@ export const metadata = {
 export default function Page() {
     return <>
         <section>
-            <h2>Qu'est-ce que le protocole HTTP?</h2>
+            <h2>Protocole de communication</h2>
             <p>
-                HTTP (HyperText Transfer Protocol) est le protocole de communication fondamental du World Wide Web. 
-                Il définit comment les messages sont formatés et transmis entre les clients (navigateurs web) et les 
-                serveurs web. HTTP est un protocole de type requête-réponse, ce qui signifie qu'un client envoie une 
-                requête à un serveur, et le serveur répond avec les données demandées.
+                HTTP est un protocole de communication. En des termes plus simple, c'est un langage qui est utilisé par les 
+                clients web pour communiquer avec les serveurs web. Un peu comme moi, qui vous parle ou vous écrit en français 
+                pour partager la matière avec vous, les clients web parle le HTTP pour se faire comprendre par un serveur web.
             </p>
             <p>
-                Le protocole HTTP fonctionne en mode <IC>stateless</IC>, c'est-à-dire que chaque requête est 
-                indépendante et le serveur ne conserve pas d'informations sur les requêtes précédentes. Cette 
-                caractéristique simplifie l'architecture des serveurs web mais nécessite des mécanismes additionnels 
-                pour maintenir l'état des sessions utilisateur.
+                HTTP est très flexible et extensible. Il a été inventé dans le début des années 1990 et est encore aujourd'hui 
+                utilisé pour la majorité des communications sur l'Internet, avec l'aide de plusieurs mises à niveau pour rester 
+                pertinent. Dans ce cours, nous utiliserons le protocole HTTP pour communiquer entre un client (navigateur Web) 
+                et un serveur (serveur Node.js).
             </p>
-        </section>
-
-        <section>
-            <h2>Historique et versions</h2>
             <p>
-                Le protocole HTTP a évolué au fil des années:
+                Comme mentionné dans les pages précédantes, n'oubliez pas que la communication client-serveur part toujours du 
+                client. En effet, c'est le client qui enverra des messages ou requêtes HTTP au serveur. Le contraire n'arrivera 
+                jamais (...presque jamais). Ce comportement est une caractéristique fondamentale du protocole HTTP.
             </p>
-            <ul>
-                <li><strong>HTTP/0.9 (1991)</strong>: La première version, très simple, ne supportait que la méthode GET</li>
-                <li><strong>HTTP/1.0 (1996)</strong>: Ajout des méthodes POST et HEAD, des codes de statut et des en-têtes</li>
-                <li><strong>HTTP/1.1 (1997)</strong>: Version la plus utilisée pendant longtemps, avec des connexions persistantes</li>
-                <li><strong>HTTP/2 (2015)</strong>: Amélioration des performances avec la multiplexation des requêtes</li>
-                <li><strong>HTTP/3 (2022)</strong>: Utilise QUIC au lieu de TCP pour de meilleures performances</li>
-            </ul>
             <p>
-                Pour ce cours, nous nous concentrerons principalement sur HTTP/1.1, qui reste la version la plus 
-                couramment utilisée et comprise.
+                Bien que l'utilisation de ce protocole peut être très complexe, nous essayerons de la simplifier le plus possible.
+                Nous décrirons donc dans les prochaines pages, les 2 éléments fondamentaux du protocole: les <strong>requêtes</strong> et 
+                les <strong>réponses</strong> HTTP.
             </p>
         </section>
 
         <section>
-            <h2>Concepts clés</h2>
+            <h2>Limitations</h2>
             <p>
-                Pour bien comprendre HTTP, il est important de maîtriser quelques concepts fondamentaux:
+                HTTP est un protocole de communication est aujourd'hui très permissif et flexible. Cependant, il n'en a pas toujours
+                été ainsi. En effet, à ses débuts, HTTP était un protocole très simple et limité. Par exemple, il ne supportait
+                que 2 méthodes de requêtes: <IC>GET</IC> et <IC>POST</IC>. De la même façon, il ne supportait pas les communications
+                bi-directionnelle. Heureusement, avec le temps, le protocole a évolué et s'est adapté aux besoins du web moderne.
             </p>
-            <ul>
-                <li><strong>Client-Serveur</strong>: Architecture où le client (navigateur) fait des demandes au serveur</li>
-                <li><strong>URL/URI</strong>: Identifiant unique pour localiser une ressource sur le web</li>
-                <li><strong>Méthodes HTTP</strong>: Verbes qui indiquent l'action à effectuer (GET, POST, PUT, DELETE, etc.)</li>
-                <li><strong>Codes de statut</strong>: Indiquent le résultat de la requête (200, 404, 500, etc.)</li>
-                <li><strong>En-têtes</strong>: Métadonnées accompagnant les requêtes et réponses</li>
-                <li><strong>Corps du message</strong>: Données optionnelles transmises avec la requête ou la réponse</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Importance pour le développement web</h2>
             <p>
-                Comprendre HTTP est essentiel pour tout développeur web car:
+                Aujourd'hui, il est peu probable que vous fassiez face à une limitation de ce protocole, mais il est important de
+                garder en tête que certaines limitations peuvent exister, surtout si vous travaillez avec des systèmes plus anciens
+                ou des technologies spécifiques.
             </p>
-            <ul>
-                <li>Il régit toutes les communications entre le navigateur et votre serveur</li>
-                <li>Il influence les performances de votre application web</li>
-                <li>Il détermine comment votre API sera structurée et utilisée</li>
-                <li>Il affecte la sécurité de votre application</li>
-                <li>Il est la base des API REST que nous étudierons dans ce module</li>
-            </ul>
             <p>
-                Dans les pages suivantes, nous explorerons en détail la structure des requêtes et réponses HTTP, 
-                ainsi que leur utilisation pratique avec Express.js.
+                Dans ce cours, nous n'aborderons pas ces limitations, mais si vous êtes curieux d'en savoir plus, n'hésitez pas
+                à consulter la documentation suivante:
+            </p>
+            <p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Evolution_of_HTTP" target="_blank">
+                    MDN - Evolution of HTTP
+                </a>
             </p>
         </section>
     </>

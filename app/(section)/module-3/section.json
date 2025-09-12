@@ -8,7 +8,10 @@
         "http-response",
         "json",
         "api-planning",
+        "model",
         "express-routes",
-        "testing-routes"
+        "testing-routes",
+        "lab-todo",
+        "lab-book"
     ]
 }
