@@ -199,7 +199,7 @@ export default function Page() {
             <ul>
                 <li>Examiner des variables : <IC>console.log(user)</IC></li>
                 <li>Modifier des valeurs : <IC>user.name = "nouveau nom"</IC></li>
-                <li>Tester des expressions : <IC>users.filter(u => u.active)</IC></li>
+                <li>Tester des expressions : <IC>users.filter(u =&gt; u.active)</IC></li>
             </ul>
         </section>
 
