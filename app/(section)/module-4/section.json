@@ -2,8 +2,16 @@
     "$schema": "../../../model/section.schema.json",
     "title": "Client et serveur",
     "description": "Introduction à la création d'interfaces graphiques clientes qui pourront communiquer avec les serveurs web à l'aide de requêtes et de réponses.",
-    "disabled": true,
+    "disabled": false,
     "pages": [
-
+        "introduction",
+        "fetch-intro",
+        "fetch-envoyer",
+        "fetch-recevoir",
+        "erreurs-communes",
+        "deboguer-client",
+        "deboguer-serveur",
+        "lab-liste-taches",
+        "lab-bibliotheque"
     ]
 }
