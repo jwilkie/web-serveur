@@ -38,6 +38,21 @@ const readInterface = createInterface({
 const question = 
 `let nom = await readInterface.question('Quel est votre nom? ');`;
 
+const close =
+`import { createInterface } from 'node:readline/promises';
+
+// Création de l'interface de lecture
+const readInterface = createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+// Demande l'entrée dans le terminal
+let nombre = await readInterface.question('Choisissez un nombre: ');
+
+// Fermer l'interface de lecture
+readInterface.close();`;
+
 const autre = 
 `// Effacer la console
 console.clear();
@@ -91,9 +106,7 @@ export default function Page() {
                 Il n'est pas nécessaire de comprendre ce code pour l'instant. Une fois ces instructions en place, 
                 vous pourrez utiliser le code suivant pour demander des informations à l'utilisateur:
             </p>
-            <CodeBlock language="js">
-                { question }
-            </CodeBlock>
+            <CodeBlock language="js">{question}</CodeBlock>
             <p>
                 La fonction <IC>question</IC> prends en paramètre une chaine de caractère qui sera affiché avant 
                 d'attendre la réponse de l'utilisateur. Le mot-clé <IC>await</IC> est très important. Si vous ne 
@@ -105,6 +118,17 @@ export default function Page() {
                 le résultat d'une promesse, nous devons mettre le mot-clé <IC>await</IC>, comme il est fait dans l'exemple 
                 ci-dessus.
             </ColoredBox>
+            <p>
+                La création d'une interface de lecture va permettre de capturer les entrées de l'utilisateur dans le terminal.
+                Toutefois, l'interface de lecture continuera de fonctionner même après avoir obtenu la réponse de l'utilisateur.
+                Lorsque vous n'avez plus besoin de l'interface de lecture, il est important de la fermer en utilisant la 
+                fonction <IC>readInterface.close()</IC>. Nous pouvons généralement fermer l'interface de lecture vers la fin de notre
+                programme.
+            </p>
+            <p>
+                Voici un exemple complet, de la création de l'interface de lecture jusqu'à sa fermeture:
+            </p>
+            <CodeBlock language="js">{close}</CodeBlock>
         </section>
 
         <section>
