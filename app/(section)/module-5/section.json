@@ -2,8 +2,13 @@
     "$schema": "../../../model/section.schema.json",
     "title": "Bases de données",
     "description": "Démonstration de connection d'une base de données à un serveur web dans le but de manipuler les données à partir du serveur. Présentation des méthodes sécuritaires pour accéder à une base de données.",
-    "disabled": true,
     "pages": [
-
+        "intro-sqlite",
+        "db-open",
+        "db-request",
+        "db-params",
+        "lab-todo",
+        "lab-book",
+        "db-template"
     ]
 }
