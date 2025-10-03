@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import IC from '@/components/InlineCode'
 import { DownloadBlock, File } from '@/components/DownloadBlock'
 
@@ -5,9 +6,9 @@ import { DownloadBlock, File } from '@/components/DownloadBlock'
  * @type {import("next").Metadata}
  */
 export const metadata = {
-    title: "Gabarit de base",
-    description: "Présentation du gabarit de base pour la création de serveurs web avec Node.js et Express.js.",
-    keywords: ["templates", "gabarit", "node.js", "express", "middlewares", "dotenv"],
+    title: "Gabarit avec rendu serveur",
+    description: "Présentation du gabarit avec rendu serveur Handlebars pour la création de serveurs web avec Node.js et Express.js.",
+    keywords: ["templates", "gabarit", "node.js", "express", "handlebars", "ssr", "middlewares"],
     group: "templates"
 }
 
@@ -17,8 +18,8 @@ export default function Page() {
             <h2>Guide d'utilisation</h2>
             <p>
                 Ce gabarit de base est un point de départ pour vos projets de création de serveurs web avec Node.js
-                et Express.js. Nous aurons des gabarits plus complexes dans les modules suivants, mais ils seront 
-                tous basés sur celui-ci. Voici comment l'utiliser:
+                et Express.js. Ce gabarit est conçu à partir du <Link href="/module-5/db-template/">gabarit avec base de données</Link>, mais
+                auquel nous lui avons ajouté le rendu serveur avec Handlebars. Voici comment l'utiliser:
             </p>
             <ol>
                 <li>Télécharger le gabarit de base dans la section ci-dessous</li>
@@ -33,6 +34,9 @@ export default function Page() {
                     </ol>
                 </li>
                 <li>
+                    Ouvrir le fichier <IC>.env</IC> et modifier le nom de la base de données.
+                </li>
+                <li>
                     Ouvrir un terminal dans le dossier du projet et lancer les commandes ci-dessous
                     <ol>
                         <li>Lancer la commande <IC>npm i</IC></li>
@@ -45,7 +49,7 @@ export default function Page() {
         <section>
             <h2>Téléchargement</h2>
             <DownloadBlock>
-                <File fileName="gabarit-base.zip" path="/templates/basic.zip">gabarit-base.zip</File>
+                <File fileName="gabarit-rendu.zip" path="/templates/render.zip">gabarit-rendu.zip</File>
             </DownloadBlock>
         </section>
     </>

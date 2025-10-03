@@ -2,8 +2,15 @@
     "$schema": "../../../model/section.schema.json",
     "title": "Engin de modélisation",
     "description": "Démonstration de la génération de page web à l'aide d'un engin de modélisation pour simplifier, optimiser l'affichage et éviter la répétition de données dans l'interface graphique.",
-    "disabled": true,
     "pages": [
-
+        "templating",
+        "handlebars",
+        "layout",
+        "view",
+        "data",
+        "helpers",
+        "partials",
+        "lab-todo",
+        "lab-book"
     ]
 }

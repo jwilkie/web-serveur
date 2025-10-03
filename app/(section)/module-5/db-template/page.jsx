@@ -37,7 +37,7 @@ export default function Page() {
                     Ouvrir le fichier <IC>.env</IC> et modifier le nom de la base de données.
                 </li>
                 <li>
-                    Ouvrir une terminal dans le dossier du projet et lancer les commandes ci-dessous
+                    Ouvrir un terminal dans le dossier du projet et lancer les commandes ci-dessous
                     <ol>
                         <li>Lancer la commande <IC>npm i</IC></li>
                         <li>Lancer la commande <IC>npm run dev</IC></li>
