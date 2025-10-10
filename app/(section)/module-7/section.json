@@ -2,8 +2,13 @@
     "$schema": "../../../model/section.schema.json",
     "title": "Validation des données",
     "description": "Introduction à la validation des données autant du côté client que serveur dans le but de protéger les systèmes web.",
-    "disabled": true,
     "pages": [
-
+        "intro",
+        "reusable",
+        "middleware",
+        "server-validation",
+        "client-validation",
+        "lab-todo",
+        "lab-book"
     ]
 }
