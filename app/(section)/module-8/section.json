@@ -2,8 +2,17 @@
     "$schema": "../../../model/section.schema.json",
     "title": "Session et Authentification",
     "description": "Présentation de l'utilisation des sessions pour maintenir des informations entre les appels réseaux et pour faire l'authentification d'un client sur le serveur.",
-    "disabled": true,
     "pages": [
-
+        "intro-session",
+        "usage-session",
+        "intro-auth",
+        "config-auth",
+        "db-auth",
+        "passport-auth",
+        "route-auth",
+        "client-auth",
+        "access-auth",
+        "lab-todo",
+        "lab-book"
     ]
 }
