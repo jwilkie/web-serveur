@@ -20,6 +20,7 @@ const main =
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
 
+    <link rel="stylesheet" href="/css/global.css">
     {{#each styles}}
         <link rel="stylesheet" href="{{this}}">
     {{/each}}
@@ -85,6 +86,12 @@ export default function Page() {
                     Les blocs <IC>{'{{#each styles}}'}</IC> et <IC>{'{{#each scripts}}'}</IC> permettent d'inclure dynamiquement des
                     fichiers CSS et Javascript spécifiques à chaque page. Nous verrons aussi comment définir ces variables et comment
                     les utiliser avec les instructions <IC>{'{{#each}}'}</IC> dans une autre page.
+                </li>
+                <li>
+                    Le CSS doit aussi être séparé entre une partie générique commune à toutes les pages et une partie spécifique à chaque page.
+                    Vous devrez donc généralement créer un fichier <IC>global.css</IC> contenant le CSS commun à toutes les pages, et un fichier
+                    CSS spécifique pour chaque page. Le fichier <IC>global.css</IC> sera inclus dans le fichier <IC>main.handlebars</IC>, comme 
+                    indiqué ci-dessus.
                 </li>
             </ul>
             <p>

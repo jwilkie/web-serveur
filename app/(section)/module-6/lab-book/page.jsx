@@ -25,8 +25,13 @@ export default function Page() {
                     notions vues dans ce module.
                 </li>
                 <li>
-                    Séparer le code du fichier <IC>index.html</IC> en partie générique dans le layout principal et en partie
-                    spécifique dans une page <IC>home.handlebars</IC>.
+                    Séparer le code du fichier <IC>index.html</IC> en partie générique dans le layout principal <IC>main.handlebars</IC> et 
+                    en partie spécifique dans une page <IC>home.handlebars</IC>.
+                </li>
+                <li>
+                    Séparer le code du fichier <IC>book.css</IC> en partie générique dans un fichier <IC>global.css</IC> et en partie
+                    spécifique dans un fichier <IC>home.css</IC>. N'oubliez pas de modifier le layout principal pour y inclure le 
+                    fichier <IC>global.css</IC>.
                 </li>
                 <li>
                     Programmer la route de la page d'accueil pour qu'elle génère son HTML avec Handlebars. Pour le tester, n'oubliez
