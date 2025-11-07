@@ -1,9 +1,13 @@
 {
     "$schema": "../../../model/section.schema.json",
-    "title": "Communication bidirectionnelle",
-    "description": "Présentation des différents types de communication entre un client et un serveur avec le protocole HTTP et de l'utilisation de technologie pour permettre la communication bidirectionnelle.",
-    "disabled": true,
+    "title": "Protocole sécurisé",
+    "description": "Utilisation des derniers protocoles de communication pour sécuriser le communications entre un client et un serveur.",
     "pages": [
-
+        "encryption",
+        "https",
+        "certificate",
+        "express",
+        "lab-todo",
+        "lab-book"
     ]
 }
