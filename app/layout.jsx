@@ -5,12 +5,13 @@ import Footer from '@/components//Footer'
 import ClientLayout from '@/components/ClientLayout'
 import { getGroups } from '@/model/group'
 import { getSections } from '@/model/section'
+import appConfig from '@/app.config'
+import { icons } from '@/model/icons'
 
 import 'normalize.css/normalize.css'
 import '@/styles/globals.css'
 import '@/styles/themes.css'
 import styles from './layout.module.css'
-import appConfig from '@/app.config'
 
 const comfortaa = Comfortaa({
     subsets: ['latin'],
@@ -41,6 +42,9 @@ export const metadata = {
     title: {
         template: `%s | ${appConfig.title}`,
         default: appConfig.title
+    },
+    icons: {
+        icon: icons.map(({id}) => `./icons/${id}`)
     },
     openGraph: {
         images: [
