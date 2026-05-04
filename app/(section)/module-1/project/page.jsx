@@ -1,6 +1,7 @@
 import CodeBlock from '@/components/CodeBlock';
 import ColoredBox from '@/components/ColoredBox';
 import IC from '@/components/InlineCode';
+import KK from '@/components/KeyboardKey';
 
 /**
  * @type {import("next").Metadata}
@@ -83,7 +84,7 @@ export default function Page() {
                     <ol>
                         <li>
                             Le nom du package est le nom de votre projet. Si vous avez bien nommé votre dossier, vous pouvez simplement
-                            appuyer sur la touche <kbd>Entrée</kbd> pour valider la valeur par défaut entre parenthèses.
+                            appuyer sur la touche <KK>Entrée</KK> pour valider la valeur par défaut entre parenthèses.
                         </li>
                         <li>
                             Ajouter une description courte de votre projet.
@@ -101,7 +102,7 @@ export default function Page() {
                         </li>
                         <li>
                             Les autres options peuvent être laissées par défaut. Vous pouvez simplement appuyer sur la 
-                            touche <kbd>Entrée</kbd> pour valider chacune d'entre elles.
+                            touche <KK>Entrée</KK> pour valider chacune d'entre elles.
                         </li>
                     </ol>
                     <CodeBlock language="terminal">{init}</CodeBlock>
