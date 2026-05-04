@@ -12,6 +12,7 @@ export function generateImageMetadata() {
 }
 
 export default async function Icon({ id }) {
-    const icon = icons.find((icon) => icon.id === id)
+    const iconId = await id;
+    const icon = icons.find((icon) => icon.id === iconId);
     return createIcon(icon.size);
 }

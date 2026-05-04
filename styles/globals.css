@@ -43,21 +43,6 @@ table {
     width: 100%;
 }
 
-kbd {
-    background-color: var(--key-bg-color);
-    padding: 0 .2rem;
-    border-radius: 3px;
-    box-shadow: -1px 1px 0 1px var(--key-border-color);
-}
-
-kbd img {
-    display: inline-block;
-    height: 0.8rem;
-    width: auto;
-    padding-top: 0.1rem;
-    vertical-align: baseline;
-}
-
 sup {
     vertical-align: super;
     font-size: 0.6em;
